@@ -48,7 +48,7 @@ const ClaimBox = () => {
 		<>
 		<Heading mt="20px" color="#E4C703" fontFamily="Aleo, serif" size="3xl">BanBucket</Heading>
 		<div style={{ display: "flex", flexDirection: "row", alignItems: "center"}}>
-			<Text fontSize="xl" m="5px">{amount}</Text>
+			<Text color="white" fontSize="xl" m="5px">{amount}</Text>
 			<BanIcon style={{ width: "20px", height: "20px" }} />
 		</div>
 			<div style={{ minHeight: '30px' }}>
