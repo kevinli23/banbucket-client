@@ -113,7 +113,7 @@ const ClaimBox = () => {
 				</Text>
 				<QRCode
 					size={100}
-					value="ban_1srfj9ohtnh9zkwuxdscf8n7dqcndks9waurjcorj6aizwagckampump8s4k"
+					value="ban_1tqnxnmcibdimffy4fe3oqbwiaadnydds4t1mqc7cfokh1g1q954emfqot9c"
 				/>
 			</div>
 		</div>
