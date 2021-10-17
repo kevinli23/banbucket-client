@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-import { Input, Button, Text } from '@chakra-ui/react';
+import { Input, Button, Text, Heading} from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import QRCode from 'react-qr-code';
@@ -25,6 +25,7 @@ const ClaimBox = () => {
 
 	return (
 		<>
+		<Heading mt="5px" color="#E4C703" fontFamily="Aleo, serif" size="3xl">BanBucket</Heading>
 			<div style={{ minHeight: '30px' }}>
 				{((!isValid && addr !== '') || showMsg) && (
 					<Text fontSize="lg" color={isErr ? 'red.500' : 'green.500'}>
