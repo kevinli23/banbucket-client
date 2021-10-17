@@ -104,19 +104,19 @@ const ClaimBox = () => {
 						captchaRef.current.resetCaptcha()
 						var failed = false
 
-						await fetch('https://api-beta.banano.cc', {
-							method: 'POST',
-							headers: {
-								'Content-Type': 'application/json',
-							},
-							body: JSON.stringify({ action: "account_get", key: addr }),
-						}).catch((_err) => {
-							setShowMsg(true);
-							setLoading(false);
-							setIsErr(true);
-							setMsg("Invalid Banano Address")
-							failed = true
-						})
+						// await fetch('https://api-beta.banano.cc', {
+						// 	method: 'POST',
+						// 	headers: {
+						// 		'Content-Type': 'application/json',
+						// 	},
+						// 	body: JSON.stringify({ action: "account_get", key: addr }),
+						// }).catch((_err) => {
+						// 	setShowMsg(true);
+						// 	setLoading(false);
+						// 	setIsErr(true);
+						// 	setMsg("Invalid Banano Address")
+						// 	failed = true
+						// })
 
 						if (!failed) {
 							const requestOptions = {
