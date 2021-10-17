@@ -81,7 +81,7 @@ const ClaimBox = () => {
 					};
 					// fetch
 					const response = await fetch(
-						'http://localhost:8080/api/v1/claim',
+						'https://banbucket.herokuapp.com/api/v1/claim',
 						requestOptions
 					);
 					const data = await response.json();
