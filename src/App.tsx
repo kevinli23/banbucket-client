@@ -1,6 +1,5 @@
 import React from 'react';
 import ClaimBox from './components/ClaimBox';
-import Footer from './components/Footer';
 import './App.css';
 
 function App() {
