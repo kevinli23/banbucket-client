@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://banbucket.ninja",
+  "homepage": "https://www.banbucket.ninja",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.16",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

@@ -84,19 +84,30 @@ const ClaimBox = () => {
 							},
 							body: JSON.stringify({ addr: addr, captcha: captcha }),
 						};
+						var failed = false
 						// fetch
 						const response = await fetch(
 							'https://banbucket.herokuapp.com/api/v1/claim',
 							requestOptions
-						);
-						const data = await response.json();
+						).catch((_) => {
+							setShowMsg(true);
+							setLoading(false);
+							setIsErr(true);
+							setMsg("Failed to connect to server")
+							failed = true
+						});
 
-						setShowMsg(true);
-						setLoading(false);
+						if (!failed) {
+							const data = await response.json();
+	
+							setShowMsg(true);
+							setLoading(false);
+	
+							setIsErr(response.status === 400 || response.status === 500);
+	
+							setMsg(data.message);
+						}
 
-						setIsErr(response.status === 400 || response.status === 500);
-
-						setMsg(data.message);
 					}}
 				>
 					Claim Free Banano
