@@ -96,7 +96,7 @@ const ClaimBox = () => {
 			>
 				Claim Free Banano
 			</Button>
-			<Text mt="20px" mb="5px" fontSize="xl">
+			<Text color="white" mt="20px" mb="5px" fontSize="xl">
 				Learn More
 			</Text>
 			<IconRow />
@@ -108,7 +108,7 @@ const ClaimBox = () => {
 					alignItems: 'center',
 				}}
 			>
-				<Text mt="30px" fontSize="2xl">
+				<Text color="white" mt="30px" fontSize="2xl">
 					Donate!
 				</Text>
 				<QRCode
