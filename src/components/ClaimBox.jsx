@@ -26,7 +26,7 @@ const ClaimBox = () => {
 					},
 				}).then(async (res) => {
 					const json = await res.json()
-					setAmount(json.amount)
+					setAmount(json.message)
 				}).catch((_err) => {
 					setAmount(0)
 					return
@@ -104,20 +104,6 @@ const ClaimBox = () => {
 						captchaRef.current.resetCaptcha()
 						var failed = false
 
-						// await fetch('https://api-beta.banano.cc', {
-						// 	method: 'POST',
-						// 	headers: {
-						// 		'Content-Type': 'application/json',
-						// 	},
-						// 	body: JSON.stringify({ action: "account_get", key: addr }),
-						// }).catch((_err) => {
-						// 	setShowMsg(true);
-						// 	setLoading(false);
-						// 	setIsErr(true);
-						// 	setMsg("Invalid Banano Address")
-						// 	failed = true
-						// })
-
 						if (!failed) {
 							const requestOptions = {
 								method: 'POST',
@@ -127,7 +113,6 @@ const ClaimBox = () => {
 								body: JSON.stringify({ addr: addr, captcha: captcha }),
 							};
 							var failed = false
-							// fetch
 							const response = await fetch(
 								'https://banbucket.herokuapp.com/api/v1/claim',
 								requestOptions
