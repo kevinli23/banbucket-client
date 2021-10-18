@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Input, Button, Text, Heading} from '@chakra-ui/react';
+import { Input, Button, Text, Heading, Link } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
-import QRCode from 'react-qr-code';
 import { ReactComponent as BanIcon } from '../banicon.svg';
+import {Link as RouteLink} from 'react-router-dom'
 
 const ClaimBox = () => {
 	const [addr, setAddr] = useState('');
@@ -151,13 +151,15 @@ const ClaimBox = () => {
 						alignItems: 'center',
 					}}
 				>
-					<Text color="white" mt="30px" fontSize="2xl">
-						Donate!
-					</Text>
-					<QRCode
-						size={100}
-						value="ban_1tqnxnmcibdimffy4fe3oqbwiaadnydds4t1mqc7cfokh1g1q954emfqot9c"
-					/>
+					<Link to="/donate" as={RouteLink} _hover={{
+						textDecoration: 'none'
+					}} _link={{
+						textDecoration: 'none'
+					}}>
+						<Button colorScheme="blue" mt="30px" mb="5px" fontSize="xl">
+							Donate!
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</>
