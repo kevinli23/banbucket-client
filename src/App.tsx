@@ -1,6 +1,6 @@
 import React from 'react';
-import ClaimBox from './components/ClaimBox';
 import DonatePage from './components/DonatePage';
+import ClaimPage from './components/ClaimPage';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -13,25 +13,7 @@ function App() {
 						<DonatePage />
 					</Route>
 					<Route path="/">
-						<div
-							className="App"
-							style={{
-								minWidth: '100vw',
-								minHeight: '100vh',
-								backgroundColor: '#212529',
-								display: 'flex',
-								flexDirection: 'column',
-								alignItems: 'center',
-								justifyContent: 'center',
-							}}
-						>
-							{/* <div style={{ marginTop: 'auto' }}> */}
-							<ClaimBox />
-							{/* </div> */}
-							{/* <div style={{ alignSelf: 'flex-end', marginTop: 'auto' }}>
-				<Footer />
-			</div> */}
-						</div>
+						<ClaimPage />
 					</Route>
 				</Switch>
 			</Router>

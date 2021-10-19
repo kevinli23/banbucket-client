@@ -14,14 +14,17 @@ const DonatePage = () => {
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
+				color: 'white',
 			}}
 		>
-			<Heading>Page in Progress</Heading>
+			<Heading m="10px" color="white">
+				Page in Progress
+			</Heading>
 			<QRCode
 				size={128}
 				value="ban_1tqnxnmcibdimffy4fe3oqbwiaadnydds4t1mqc7cfokh1g1q954emfqot9c"
 			/>
-			<Text>
+			<Text m="10px" color="white">
 				Donate: ban_1tqnxnmcibdimffy4fe3oqbwiaadnydds4t1mqc7cfokh1g1q954emfqot9c
 			</Text>
 		</div>

@@ -4,7 +4,7 @@ import { Input, Button, Text, Heading, Link } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
-import {Link as RouteLink} from 'react-router-dom'
+import { Link as RouteLink } from 'react-router-dom';
 
 const ClaimBox = () => {
 	const [addr, setAddr] = useState('');
@@ -14,26 +14,26 @@ const ClaimBox = () => {
 	const [msg, setMsg] = useState('Please enter a valid Banano address');
 	const [showMsg, setShowMsg] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [amount, setAmount] = useState(0)
+	const [amount, setAmount] = useState(0);
 
 	useEffect(() => {
-		(
-			async () => {
-				await fetch("https://banbucket.herokuapp.com/api/v1/amount", {
-					method: 'GET',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				}).then(async (res) => {
-					const json = await res.json()
-					setAmount(json.message)
-				}).catch((_err) => {
-					setAmount(0)
-					return
+		(async () => {
+			await fetch('https://banbucket.herokuapp.com/api/v1/amount', {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			})
+				.then(async (res) => {
+					const json = await res.json();
+					setAmount(json.message);
 				})
-			}
-		)()
-	})
+				.catch((_err) => {
+					setAmount(0);
+					return;
+				});
+		})();
+	});
 
 	const captchaRef = useRef(null);
 
@@ -46,11 +46,15 @@ const ClaimBox = () => {
 
 	return (
 		<>
-		<Heading mt="20px" color="#E4C703" fontFamily="Aleo, serif" size="3xl">BanBucket</Heading>
-		<div style={{ display: "flex", flexDirection: "row", alignItems: "center"}}>
-			<Text color="white" fontSize="xl" m="5px">{amount}</Text>
-			<BanIcon style={{ width: "20px", height: "20px" }} />
-		</div>
+			<Heading mt="20px" color="#E4C703" fontFamily="Aleo, serif" size="3xl">
+				BanBucket
+			</Heading>
+			<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+				<Text color="white" fontSize="xl" m="5px">
+					{amount}
+				</Text>
+				<BanIcon style={{ width: '20px', height: '20px' }} />
+			</div>
 			<div style={{ minHeight: '30px' }}>
 				{((!isValid && addr !== '') || showMsg) && (
 					<Text fontSize="lg" color={isErr ? 'red.500' : 'green.500'}>
@@ -101,8 +105,8 @@ const ClaimBox = () => {
 					isLoading={loading}
 					onClick={async () => {
 						setLoading(true);
-						captchaRef.current.resetCaptcha()
-						var failed = false
+						captchaRef.current.resetCaptcha();
+						var failed = false;
 
 						if (!failed) {
 							const requestOptions = {
@@ -112,7 +116,7 @@ const ClaimBox = () => {
 								},
 								body: JSON.stringify({ addr: addr, captcha: captcha }),
 							};
-							var failed = false
+							var failed = false;
 							const response = await fetch(
 								'https://banbucket.herokuapp.com/api/v1/claim',
 								requestOptions
@@ -120,18 +124,18 @@ const ClaimBox = () => {
 								setShowMsg(true);
 								setLoading(false);
 								setIsErr(true);
-								setMsg("Failed to connect to server")
-								failed = true
+								setMsg('Failed to connect to server');
+								failed = true;
 							});
-	
+
 							if (!failed) {
 								const data = await response.json();
-		
+
 								setShowMsg(true);
 								setLoading(false);
-		
+
 								setIsErr(response.status === 400 || response.status === 500);
-		
+
 								setMsg(data.message);
 							}
 						}
@@ -151,11 +155,16 @@ const ClaimBox = () => {
 						alignItems: 'center',
 					}}
 				>
-					<Link to="/donate" as={RouteLink} _hover={{
-						textDecoration: 'none'
-					}} _link={{
-						textDecoration: 'none'
-					}}>
+					<Link
+						to="/donate"
+						as={RouteLink}
+						_hover={{
+							textDecoration: 'none',
+						}}
+						_link={{
+							textDecoration: 'none',
+						}}
+					>
 						<Button colorScheme="blue" mt="30px" mb="5px" fontSize="xl">
 							Donate!
 						</Button>
