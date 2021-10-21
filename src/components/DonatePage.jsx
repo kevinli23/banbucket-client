@@ -29,9 +29,9 @@ const DonatePage = () => {
 
 					arr.sort((donator1, donator2) => {
 						if (donator1['amount'] > donator2['amount']) {
-							return 1
-						} else if (donator1['amount'] < donator2['amount']){
 							return -1
+						} else if (donator1['amount'] < donator2['amount']){
+							return 1
 						}
 						return 0
 					})
