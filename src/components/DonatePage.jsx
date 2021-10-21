@@ -9,7 +9,6 @@ import {
 	Tr,
 	Th,
 	Td,
-	TableCaption,
 } from '@chakra-ui/react';
 
 const DonatePage = () => {
