@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Input, Button, Text, Heading, Link } from '@chakra-ui/react';
+import { Input, Button, Text, Heading, Link, useToast  } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
@@ -10,11 +10,10 @@ const ClaimBox = () => {
 	const [addr, setAddr] = useState('');
 	const [isValid, setIsValid] = useState(false);
 	const [captcha, setCaptcha] = useState('');
-	const [isErr, setIsErr] = useState(true);
 	const [msg, setMsg] = useState('Please enter a valid Banano address');
-	const [showMsg, setShowMsg] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [amount, setAmount] = useState(0);
+	const toast = useToast()
 
 	useEffect(() => {
 		(async () => {
@@ -56,8 +55,8 @@ const ClaimBox = () => {
 				<BanIcon style={{ width: '20px', height: '20px' }} />
 			</div>
 			<div style={{ minHeight: '30px' }}>
-				{((!isValid && addr !== '') || showMsg) && (
-					<Text fontSize="lg" color={isErr ? 'red.500' : 'green.500'}>
+				{(!isValid && addr !== '') && (
+					<Text fontSize="lg" color='red.500'>
 						{msg}
 					</Text>
 				)}
@@ -116,27 +115,53 @@ const ClaimBox = () => {
 								},
 								body: JSON.stringify({ addr: addr, captcha: captcha }),
 							};
-							var failed = false;
+							failed = false;
 							const response = await fetch(
 								'https://banbucket.herokuapp.com/api/v1/claim',
 								requestOptions
 							).catch((_) => {
-								setShowMsg(true);
 								setLoading(false);
-								setIsErr(true);
-								setMsg('Failed to connect to server');
+
+								if (!toast.isActive("server-connection")) {
+									toast({
+										id: "server-connection",
+										title: "Connection Error",
+										description: "Failed to connect to server",
+										status: "error",
+										duration: 3000,
+										isClosable: true,
+										position: "top",
+									})
+								}
+
 								failed = true;
 							});
 
 							if (!failed) {
 								const data = await response.json();
 
-								setShowMsg(true);
+								if (response.status === 400 || response.status === 500) {
+									toast({
+										title: "Bad Request",
+										description: data.message,
+										status: "error",
+										duration: 2500,
+										isClosable: true,
+										position: "top",
+									})
+								} else {
+									toast({
+										title: "Successful Claim",
+										description: data.message,
+										status: "success",
+										duration: 2500,
+										isClosable: true,
+										position: "top",
+									})
+								}
+
 								setLoading(false);
-
-								setIsErr(response.status === 400 || response.status === 500);
-
-								setMsg(data.message);
+								setCaptcha("")
 							}
 						}
 					}}

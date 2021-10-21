@@ -29,7 +29,7 @@ const Footer = () => {
 					</Text>
 					<QRCode
 						size={100}
-						value="ban_1srfj9ohtnh9zkwuxdscf8n7dqcndks9waurjcorj6aizwagckampump8s4k"
+						value="ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu"
 					/>
 				</div>
 			</div>

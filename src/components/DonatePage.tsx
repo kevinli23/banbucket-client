@@ -9,6 +9,7 @@ const DonatePage = () => {
 			style={{
 				minWidth: '100vw',
 				minHeight: '100vh',
+				maxWidth: '100vw',
 				backgroundColor: '#212529',
 				display: 'flex',
 				flexDirection: 'column',
@@ -22,10 +23,10 @@ const DonatePage = () => {
 			</Heading>
 			<QRCode
 				size={128}
-				value="ban_1tqnxnmcibdimffy4fe3oqbwiaadnydds4t1mqc7cfokh1g1q954emfqot9c"
+				value="ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu"
 			/>
 			<Text m="10px" color="white">
-				Donate: ban_1tqnxnmcibdimffy4fe3oqbwiaadnydds4t1mqc7cfokh1g1q954emfqot9c
+				Donate: ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu
 			</Text>
 		</div>
 	);
