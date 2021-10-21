@@ -11,6 +11,7 @@
 <span style="color:#ffb38a">[IMPROVED]</span>
 - Change Payout interval to every 15 hours instead of 24 hours
 - Increase Payout amount to 0.1 BAN
+- Fixed 404 on other routes
   
 &nbsp;
 
