@@ -7,7 +7,7 @@ const ClaimPage = () => {
 			className="App"
 			style={{
 				minWidth: '100vw',
-				minHeight: '100vh',
+				minHeight: '95vh',
 				backgroundColor: '#212529',
 				display: 'flex',
 				flexDirection: 'column',

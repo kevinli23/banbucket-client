@@ -27,15 +27,15 @@ const DonatePage = () => {
 					const json = await res.json();
 					var arr = json.donators;
 
-					// arr.sort((donator1, donator2) => {
-					// 	if (donator1['amount'] > donator2['amount']) {
-					// 		return -1
-					// 	} else if (donator1['amount'] < donator2['amount']){
-					// 		return 1
-					// 	}
-					// 	return 0
-					// })
-					
+					arr.sort((donator1, donator2) => {
+						if (donator1['amount'] > donator2['amount']) {
+							return 1
+						} else if (donator1['amount'] < donator2['amount']){
+							return -1
+						}
+						return 0
+					})
+
 					setDonators(arr)
 				})
 				.catch((_err) => {
@@ -49,7 +49,7 @@ const DonatePage = () => {
 			className="App"
 			style={{
 				minWidth: '100vw',
-				minHeight: '100vh',
+				minHeight: '95vh',
 				maxWidth: '100vw',
 				backgroundColor: '#212529',
 				display: 'flex',
@@ -58,11 +58,10 @@ const DonatePage = () => {
 				color: 'white',
 			}}
 		>
-			<Heading m="10px" color="white">
-				Page in Progress
+			<Heading m="20px" fontFamily="Aleo, serif" size="3xl" color="white">
+				Hall of Donators
 			</Heading>
-			<Table maxWidth="50vw" variant="simple">
-				<TableCaption>BanBucket Donators</TableCaption>
+			<Table m="15px" maxWidth="50vw" variant="simple" colorScheme="linkedin">
 				<Thead>
 					<Tr>
 						<Th>Address</Th>
