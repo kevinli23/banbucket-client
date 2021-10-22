@@ -1,7 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, ReactChildren, ReactChild } from 'react';
 import Markdown from 'markdown-to-jsx';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 import { Heading } from '@chakra-ui/react';
+
+interface MarkdownTextProps {
+	children: ReactChild | ReactChildren;
+}
+
+const MarkdownText = ({ children }: MarkdownTextProps) => {
+	return (
+		<SimpleBar
+			style={{
+				maxHeight: '80vh',
+				maxWidth: '25vw',
+				minHeight: '80vh',
+				minWidth: '25vw',
+				padding: '20px',
+				background: '#696969',
+				borderRadius: '15px',
+				marginTop: '10px',
+			}}
+		>
+			{children}
+		</SimpleBar>
+	);
+};
 
 const UpdatePage = () => {
 	const [updates, setUpdates] = useState('');
@@ -32,26 +57,18 @@ const UpdatePage = () => {
 			<Heading mt="20px" color="#E4C703" fontFamily="Aleo, serif" size="3xl">
 				Update Logs
 			</Heading>
-			<div
-				style={{
-					display: 'flex',
-					minWidth: '25vw',
-					margin: '20px',
-					justifyContent: 'flex-start',
+			<Markdown
+				options={{
+					overrides: {
+						h1: {
+							component: Heading,
+						},
+					},
+					wrapper: MarkdownText,
 				}}
 			>
-				<Markdown
-					options={{
-						overrides: {
-							h1: {
-								component: Heading,
-							},
-						},
-					}}
-				>
-					{updates}
-				</Markdown>
-			</div>
+				{updates}
+			</Markdown>
 		</div>
 	);
 };

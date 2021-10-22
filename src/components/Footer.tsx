@@ -79,6 +79,9 @@ const Footer = () => {
 				_link={{
 					textDecoration: 'none',
 				}}
+				_focus={{
+					textDecoration: 'none',
+				}}
 				isExternal
 				color="white"
 			>

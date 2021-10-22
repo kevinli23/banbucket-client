@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Input, Button, Text, Heading, Link, useToast  } from '@chakra-ui/react';
+import { Input, Button, Text, Heading, Link, useToast } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
@@ -32,7 +32,7 @@ const ClaimBox = () => {
 					return;
 				});
 		})();
-	}, []);
+	}, [loading]);
 
 	const captchaRef = useRef(null);
 
