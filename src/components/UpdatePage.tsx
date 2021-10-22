@@ -18,7 +18,8 @@ const MarkdownText = ({ children }: MarkdownTextProps) => {
 				minHeight: '80vh',
 				minWidth: '25vw',
 				padding: '20px',
-				background: '#696969',
+				backgroundColor: '#212529',
+				// border: '1px solid #696969',
 				borderRadius: '15px',
 				marginTop: '10px',
 			}}

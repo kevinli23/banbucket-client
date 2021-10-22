@@ -112,11 +112,18 @@ const DonatePage = () => {
 				/>
 			</HStack>
 			<HStack mt="10px">
-				<Button mr="-8px" color="white" variant="ghost" onClick={onCopy}>
+				<Button mr="-8px" colorScheme="linkedin" variant="ghost" onClick={onCopy}>
 					<Text color="#E4C703">ban_</Text>
-					1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu
+					<Text color="white">
+						1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu
+					</Text>
 				</Button>
-				<IconButton aria-label="copy" icon={<CopyIcon />} onClick={onCopy} />
+				<IconButton
+					colorScheme="linkedin"
+					aria-label="copy"
+					icon={<CopyIcon />}
+					onClick={onCopy}
+				/>
 			</HStack>
 
 			<SimpleBar
