@@ -12,7 +12,7 @@ const UpdatePage = () => {
 			.then((text) => {
 				setUpdates(text);
 			});
-	});
+	}, []);
 
 	return (
 		<div

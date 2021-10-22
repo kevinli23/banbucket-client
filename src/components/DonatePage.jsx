@@ -41,7 +41,7 @@ const DonatePage = () => {
 					return;
 				});
 		})();
-	});
+	}, []);
 
 	return (
 		<div

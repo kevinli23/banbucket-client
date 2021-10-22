@@ -32,7 +32,7 @@ const ClaimBox = () => {
 					return;
 				});
 		})();
-	});
+	}, []);
 
 	const captchaRef = useRef(null);
 
