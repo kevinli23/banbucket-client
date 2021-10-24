@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Input, Button, Text, Heading, Link, useToast, Tag } from '@chakra-ui/react';
+import { Input, Button, Text, Heading, useToast, Tag, Stat, StatLabel, StatNumber, StatHelpText, StatArrow } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
-import { Link as RouteLink } from 'react-router-dom';
 
 const ClaimBox = () => {
 	const [addr, setAddr] = useState('');
@@ -13,6 +12,8 @@ const ClaimBox = () => {
 	const [msg, setMsg] = useState('Please enter a valid Banano address');
 	const [loading, setLoading] = useState(false);
 	const [amount, setAmount] = useState(0);
+	const [price, setPrice] = useState("0");
+	const [change, setChange] = useState("0");
 	const toast = useToast()
 
 	useEffect(() => {
@@ -33,6 +34,25 @@ const ClaimBox = () => {
 				});
 		})();
 	}, [loading]);
+
+	useEffect(() => {
+		(async () => {
+			await fetch('https://banbucket.herokuapp.com/api/v1/price', {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			})
+				.then(async (res) => {
+					const json = await res.json();
+					setPrice(json.price)
+					setChange(json.change)
+				})
+				.catch((_err) => {
+					return;
+				});
+		})();
+	}, [price, change]);
 
 	const captchaRef = useRef(null);
 
@@ -180,20 +200,20 @@ const ClaimBox = () => {
 						alignItems: 'center',
 					}}
 				>
-					<Link
-						to="/donate"
-						as={RouteLink}
-						_hover={{
-							textDecoration: 'none',
-						}}
-						_link={{
-							textDecoration: 'none',
-						}}
-					>
-						<Button colorScheme="blue" mt="30px" mb="5px" fontSize="xl">
-							Donate!
-						</Button>
-					</Link>
+					<div style={{
+						display: "flex",
+						flexDirection: "row",
+						marginTop: "20px",
+					}}>
+						<Stat color="white">
+							<StatLabel>BAN (CoinGecko)</StatLabel>
+							<StatNumber>$ {price} USD</StatNumber>
+							<StatHelpText>
+								<StatArrow type={change.charAt(0) === "-" ? "decrease" : "increase"} />
+									{change}%
+							</StatHelpText>
+						</Stat>
+					</div>
 					<Tag mt="10px" color="white" backgroundColor="red.600">
 						abusers will be blacklisted
 					</Tag>
