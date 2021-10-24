@@ -1,18 +1,20 @@
 # October 24th, 2021
 
-<p style="color:#ADD8E6">[NEW]</p>
+&nbsp;
+
+<h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 
 Change your representative to [<span style="color:#E4C703;text-decoration:underline"">only-bans</span>](https://www.yellowspyglass.com/account/ban_1on1ybanskzzsqize1477wximtkdzrftmxqtajtwh4p4tg1w6awn1hq677cp) and have a **30%** chance to earn double the faucet rate! Read this [<span style="color:#E4C703;text-decoration:underline"">guide</span>](https://jungletv.live/documents/badrepresentativehelp) on changing your representative and why it is important.
 
 &nbsp;
 
-<span style="color:#ffb38a">[IMPROVED]</span>
+<h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
 
 Changed address links to [<span style="color:#E4C703;text-decoration:underline"">Yellow Spyglass</span>](https://yellowspyglass.com/) instead of creeper
 
 &nbsp;
 
-<span style="color:#ffc1cc">[FIXED]</span>
+<h2 style="background-color:#ffc1cc;color:black">FIXED</h2>
 
 Fixed some display issues for smaller screens
 
@@ -20,13 +22,15 @@ Fixed some display issues for smaller screens
 
 # October 22nd, 2021
 
-<p style="color:#ADD8E6">[NEW]</p>
+&nbsp;
 
-Added in ban list for likely robo accounts
+<h2 style="background-color:#ADD8E6;color:black">NEW</h2>
+
+Added a blacklist for potential faucet abusers
 
 &nbsp;
 
-<span style="color:#ffb38a">[IMPROVED]</span>
+<h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
 
 Improved UI of Donation Page
 
@@ -34,7 +38,7 @@ Improved UI of Update Logs Page
 
 &nbsp;
 
-<span style="color:#ffc1cc">[FIXED]</span>
+<h2 style="background-color:#ffc1cc;color:black">FIXED</h2>
 
 Update faucet balance after claim
 
@@ -44,7 +48,9 @@ Fixed bug where new donators weren't updated in the donation page
 
 # October 21st, 2021
 
-<p style="color:#ADD8E6">[NEW]</p>
+&nbsp;
+
+<h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 
 Donation Table showcasing everybody who donated!
 
@@ -56,7 +62,7 @@ Auto receive donations
 
 &nbsp;
 
-<span style="color:#ffb38a">[IMPROVED]</span>
+<h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
 
 Change Payout interval to every 15 hours instead of 24 hours
 
@@ -64,7 +70,7 @@ Increase Payout amount to 0.1 BAN
 
 &nbsp;
 
-<span style="color:#ffc1cc">[FIXED]</span>
+<h2 style="background-color:#ffc1cc;color:black">FIXED</h2>
 
 Fixed 404 on other routes
   
@@ -72,7 +78,9 @@ Fixed 404 on other routes
 
 # October 20th, 2021
 
-<span style="color:#ADD8E6">[NEW]</span>
+&nbsp;
+
+<h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 
 Release of BanBucket!
   
