@@ -3,7 +3,7 @@ import Markdown from 'markdown-to-jsx';
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
-import { Heading, useMediaQuery } from '@chakra-ui/react';
+import { Heading, useMediaQuery, Tag } from '@chakra-ui/react';
 
 interface MarkdownTextProps {
 	children: ReactChild | ReactChildren;
@@ -65,6 +65,9 @@ const UpdatePage = () => {
 					overrides: {
 						h1: {
 							component: Heading,
+						},
+						h2: {
+							component: Tag,
 						},
 					},
 					wrapper: MarkdownText,

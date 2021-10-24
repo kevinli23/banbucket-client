@@ -70,7 +70,7 @@ const Footer = () => {
 			<FooterLink route="/updates" text="Updates" />
 			<FooterDot />
 			<Link
-				href="https://creeper.banano.cc/explorer/account/ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu/history"
+				href="https://www.yellowspyglass.com/account/ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu"
 				_hover={{
 					textDecoration: 'none',
 					color: '#E4C703',
@@ -84,7 +84,7 @@ const Footer = () => {
 				isExternal
 				color="white"
 			>
-				<Text>Creeper</Text>
+				<Text>SpyGlass</Text>
 			</Link>
 		</div>
 	);

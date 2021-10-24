@@ -166,11 +166,7 @@ const DonatePage = () => {
 							<Tr>
 								<Td>
 									<Link
-										href={
-											'https://creeper.banano.cc/explorer/account/' +
-											donation.addr +
-											'/history'
-										}
+										href={'https://www.yellowspyglass.com/account/' + donation.addr}
 										_hover={{
 											textDecoration: 'none',
 											color: '#E4C703',
