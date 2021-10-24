@@ -1,7 +1,7 @@
 import React from 'react';
-import DonatePage from './components/DonatePage';
-import ClaimPage from './components/ClaimPage';
-import UpdatePage from './components/UpdatePage';
+import DonatePage from './pages/DonatePage';
+import ClaimPage from './pages/ClaimPage';
+import UpdatePage from './pages/UpdatePage';
 import Footer from './components/Footer';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

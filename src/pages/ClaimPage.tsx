@@ -1,5 +1,5 @@
 import React from 'react';
-import ClaimBox from './ClaimBox';
+import ClaimBox from '../components/ClaimBox';
 
 const ClaimPage = () => {
 	return (

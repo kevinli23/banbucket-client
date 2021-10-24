@@ -1,35 +1,8 @@
-import React, { useEffect, useState, ReactChildren, ReactChild } from 'react';
+import React, { useEffect, useState } from 'react';
 import Markdown from 'markdown-to-jsx';
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
+import MarkdownContainer from '../components/MarkdownContainer';
 
-import { Heading, useMediaQuery, Tag } from '@chakra-ui/react';
-
-interface MarkdownTextProps {
-	children: ReactChild | ReactChildren;
-}
-
-const MarkdownText = ({ children }: MarkdownTextProps) => {
-	const [isMobile] = useMediaQuery('(max-width: 1024px)');
-
-	return (
-		<SimpleBar
-			style={{
-				maxHeight: '80vh',
-				maxWidth: isMobile ? '80vw' : '30vw',
-				minHeight: '80vh',
-				minWidth: isMobile ? '80vw' : '30vw',
-				padding: '20px',
-				backgroundColor: '#212529',
-				// border: '1px solid #696969',
-				borderRadius: '15px',
-				marginTop: '10px',
-			}}
-		>
-			{children}
-		</SimpleBar>
-	);
-};
+import { Heading, Tag } from '@chakra-ui/react';
 
 const UpdatePage = () => {
 	const [updates, setUpdates] = useState('');
@@ -70,7 +43,7 @@ const UpdatePage = () => {
 							component: Tag,
 						},
 					},
-					wrapper: MarkdownText,
+					wrapper: MarkdownContainer,
 				}}
 			>
 				{updates}
