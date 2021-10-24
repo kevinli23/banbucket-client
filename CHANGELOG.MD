@@ -6,6 +6,12 @@ Change your representative to [<span style="color:#E4C703;text-decoration:underl
 
 &nbsp;
 
+<span style="color:#ffb38a">[IMPROVED]</span>
+
+Changed address links to [<span style="color:#E4C703;text-decoration:underline"">Yellow Spyglass</span>](https://yellowspyglass.com/) instead of creeper
+
+&nbsp;
+
 <span style="color:#ffc1cc">[FIXED]</span>
 
 Fixed some display issues for smaller screens
@@ -70,4 +76,4 @@ Fixed 404 on other routes
 
 Release of BanBucket!
   
-0.05 BAN / 24 hours
+Initial payout of 0.05 BAN / 24 hours
