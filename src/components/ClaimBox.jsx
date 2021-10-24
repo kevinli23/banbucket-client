@@ -222,7 +222,7 @@ const ClaimBox = () => {
 						<Stat color="white">
 							<StatLabel display="flex" flexDirection="row">
 								<Text color="#E4C703" mr="5px">
-									BAN
+									Banano
 								</Text>
 								(from
 								<Link
@@ -230,7 +230,7 @@ const ClaimBox = () => {
 									ml="5px"
 									_hover={{
 										textDecoration: 'none',
-										color: 'rgb(140, 198, 63)',
+										color: 'rgb(249, 233, 136)',
 									}}
 									_link={{
 										textDecoration: 'none',
@@ -239,13 +239,13 @@ const ClaimBox = () => {
 										textDecoration: 'none',
 									}}
 									isExternal
-									color="white"
+									color="rgb(140, 198, 63)"
 								>
 									CoinGecko
 								</Link>
 								)
 							</StatLabel>
-							<StatNumber>$ {price} USD</StatNumber>
+							<StatNumber color="#E4C703">${price} USD</StatNumber>
 							<StatHelpText color={change.charAt(0) === '-' ? 'red.400' : 'green.400'}>
 								<StatArrow type={change.charAt(0) === '-' ? 'decrease' : 'increase'} />
 								{change}% (24h)
