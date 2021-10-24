@@ -15,7 +15,6 @@ import {
 	IconButton,
 	Text,
 	Image,
-	Link,
 	useMediaQuery,
 } from '@chakra-ui/react';
 
@@ -24,16 +23,42 @@ import 'simplebar/dist/simplebar.min.css';
 
 import { CopyIcon } from '@chakra-ui/icons';
 
+import DonationPedestal from '../components/DonationPedestal';
+
 interface Donator {
 	addr: string;
 	amount: number;
 }
 
+const GetColor = (index: number) => {
+	if (index === 0) {
+		return '#FFD700';
+	} else if (index === 1) {
+		return '#d8d8d8';
+	} else if (index === 2) {
+		return '#b08d57';
+	}
+
+	return 'white';
+};
+
 const DonatePage = () => {
 	const [donators, setDonators] = useState([
 		{
 			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
-			amount: 0,
+			amount: 2000,
+		},
+		{
+			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
+			amount: 1000,
+		},
+		{
+			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
+			amount: 20,
+		},
+		{
+			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
+			amount: 1,
 		},
 	]);
 	const { hasCopied, onCopy } = useClipboard(
@@ -138,12 +163,14 @@ const DonatePage = () => {
 				/>
 			</HStack>
 
+			<DonationPedestal donators={donators} />
+
 			<SimpleBar
 				style={{
 					maxWidth: isMobile ? '100vw' : '40vw',
 					minWidth: isMobile ? '100vw' : '40vw',
-					minHeight: '60vh',
-					maxHeight: '60vh',
+					minHeight: '23vh',
+					maxHeight: '23vh',
 					overflowX: 'hidden',
 					display: 'flex',
 					alignItems: 'center',
@@ -162,27 +189,9 @@ const DonatePage = () => {
 						</Tr>
 					</Thead>
 					<Tbody>
-						{donators.map((donation) => (
+						{donators.map((donation, index) => (
 							<Tr>
-								<Td>
-									<Link
-										href={'https://www.yellowspyglass.com/account/' + donation.addr}
-										_hover={{
-											textDecoration: 'none',
-											color: '#E4C703',
-										}}
-										_link={{
-											textDecoration: 'none',
-										}}
-										_focus={{
-											textDecoration: 'none',
-										}}
-										id={donation.addr}
-										isExternal
-									>
-										{donation.addr}
-									</Link>
-								</Td>
+								<Td color={GetColor(index)}>{donation.addr}</Td>
 								<Td isNumeric>{donation.amount}</Td>
 							</Tr>
 						))}

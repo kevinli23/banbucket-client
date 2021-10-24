@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
 	return (
-		<>
+		<div style={{ overflowX: 'hidden' }}>
 			<Router basename={process.env.PUBLIC_URL}>
 				<Switch>
 					<Route path="/donate">
@@ -23,7 +23,7 @@ function App() {
 				</Switch>
 				<Footer />
 			</Router>
-		</>
+		</div>
 	);
 }
 

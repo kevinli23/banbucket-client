@@ -4,13 +4,15 @@
 
 <h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 
-Change your representative to [<span style="color:#E4C703;text-decoration:underline"">only-bans</span>](https://www.yellowspyglass.com/account/ban_1on1ybanskzzsqize1477wximtkdzrftmxqtajtwh4p4tg1w6awn1hq677cp) and have a **30%** chance to earn double the faucet rate! Read this [<span style="color:#E4C703;text-decoration:underline"">guide</span>](https://jungletv.live/documents/badrepresentativehelp) on changing your representative and why it is important.
+Change your representative to [<span style="color:#E4C703;text-decoration:underline"">only-bans</span>](https://www.yellowspyglass.com/account/ban_1on1ybanskzzsqize1477wximtkdzrftmxqtajtwh4p4tg1w6awn1hq677cp) or [<span style="color:#E4C703;text-decoration:underline"">JungleTV</span>](https://www.yellowspyglass.com/account/ban_19potasho7ozny8r1drz3u3hb3r97fw4ndm4hegdsdzzns1c3nobdastcgaa) and have a **30%** chance to earn double the faucet rate! Read this [<span style="color:#E4C703;text-decoration:underline"">guide</span>](https://jungletv.live/documents/badrepresentativehelp) on changing your representative and why it is important.
 
 &nbsp;
 
 <h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
 
 Changed address links to [<span style="color:#E4C703;text-decoration:underline"">Yellow Spyglass</span>](https://yellowspyglass.com/) instead of creeper
+
+Update Donation page UI
 
 &nbsp;
 
