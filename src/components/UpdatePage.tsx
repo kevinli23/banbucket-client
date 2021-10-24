@@ -3,20 +3,22 @@ import Markdown from 'markdown-to-jsx';
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
-import { Heading } from '@chakra-ui/react';
+import { Heading, useMediaQuery } from '@chakra-ui/react';
 
 interface MarkdownTextProps {
 	children: ReactChild | ReactChildren;
 }
 
 const MarkdownText = ({ children }: MarkdownTextProps) => {
+	const [isMobile] = useMediaQuery('(max-width: 1024px)');
+
 	return (
 		<SimpleBar
 			style={{
 				maxHeight: '80vh',
-				maxWidth: '25vw',
+				maxWidth: isMobile ? '80vw' : '30vw',
 				minHeight: '80vh',
-				minWidth: '25vw',
+				minWidth: isMobile ? '80vw' : '30vw',
 				padding: '20px',
 				backgroundColor: '#212529',
 				// border: '1px solid #696969',

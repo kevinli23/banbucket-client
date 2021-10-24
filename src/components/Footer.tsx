@@ -1,5 +1,4 @@
 import React from 'react';
-import QRCode from 'react-qr-code';
 
 import { Link as RouteLink, useLocation } from 'react-router-dom';
 import { Text, Link } from '@chakra-ui/react';

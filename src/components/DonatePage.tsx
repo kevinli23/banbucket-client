@@ -16,6 +16,7 @@ import {
 	Text,
 	Image,
 	Link,
+	useMediaQuery,
 } from '@chakra-ui/react';
 
 import SimpleBar from 'simplebar-react';
@@ -39,6 +40,7 @@ const DonatePage = () => {
 		'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu'
 	);
 	const toast = useToast();
+	const [isMobile] = useMediaQuery('(max-width: 1024px)');
 
 	useEffect(() => {
 		if (!toast.isActive('copied') && hasCopied) {
@@ -98,26 +100,36 @@ const DonatePage = () => {
 				overflowX: 'hidden',
 			}}
 		>
-			<Heading m="20px" fontFamily="Aleo, serif" size="3xl" color="white">
+			<Heading
+				m="20px"
+				fontFamily="Aleo, serif"
+				size={isMobile ? '2xl' : '3xl'}
+				color="white"
+			>
 				Hall of Donators
 			</Heading>
 			<HStack>
-				<Image
-					boxSize="150px"
-					src="https://monkey.banano.cc/api/v1/monkey/ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu?svc=creeper"
-				/>
+				<Image boxSize="150px" src="/monke.svg" />
 				<QRCode
 					size={128}
 					value="ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu"
 				/>
 			</HStack>
 			<HStack mt="10px">
-				<Button mr="-8px" colorScheme="linkedin" variant="ghost" onClick={onCopy}>
-					<Text color="#E4C703">ban_</Text>
-					<Text color="white">
+				{!isMobile && (
+					<Button
+						mr="-8px"
+						color="#CBC3E3"
+						_hover={{ backgroundColor: '#878787' }}
+						variant="ghost"
+						onClick={onCopy}
+						fontSize="lg"
+					>
+						<Text color="#E4C703">ban_</Text>
 						1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu
-					</Text>
-				</Button>
+					</Button>
+				)}
+
 				<IconButton
 					colorScheme="linkedin"
 					aria-label="copy"
@@ -128,8 +140,8 @@ const DonatePage = () => {
 
 			<SimpleBar
 				style={{
-					maxWidth: '40vw',
-					minWidth: '40vw',
+					maxWidth: isMobile ? '100vw' : '40vw',
+					minWidth: isMobile ? '100vw' : '40vw',
 					minHeight: '60vh',
 					maxHeight: '60vh',
 					overflowX: 'hidden',
@@ -137,7 +149,12 @@ const DonatePage = () => {
 					alignItems: 'center',
 				}}
 			>
-				<Table m="15px" maxWidth="37vw" variant="simple" colorScheme="linkedin">
+				<Table
+					m="15px"
+					size={isMobile ? 'sm' : 'md'}
+					variant="simple"
+					colorScheme="linkedin"
+				>
 					<Thead>
 						<Tr>
 							<Th>Address</Th>

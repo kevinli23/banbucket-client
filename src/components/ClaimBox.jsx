@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Input, Button, Text, Heading, Link, useToast } from '@chakra-ui/react';
+import { Input, Button, Text, Heading, Link, useToast, Tag } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
@@ -194,6 +194,9 @@ const ClaimBox = () => {
 							Donate!
 						</Button>
 					</Link>
+					<Tag mt="10px" color="white" backgroundColor="red.600">
+						abusers will be blacklisted
+					</Tag>
 				</div>
 			</div>
 		</>

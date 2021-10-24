@@ -1,3 +1,17 @@
+# October 25th, 2021
+
+<p style="color:#ADD8E6">[NEW]</p>
+
+Change your representative to [<span style="color:#E4C703;text-decoration:underline"">only-bans</span>](https://www.yellowspyglass.com/account/ban_1on1ybanskzzsqize1477wximtkdzrftmxqtajtwh4p4tg1w6awn1hq677cp) and have a **30%** chance to earn double the faucet rate! Read this [<span style="color:#E4C703;text-decoration:underline"">guide</span>](https://jungletv.live/documents/badrepresentativehelp) on changing your representative and why it is important.
+
+&nbsp;
+
+<span style="color:#ffc1cc">[FIXED]</span>
+
+Fixed some display issues for smaller screens
+
+&nbsp;
+
 # October 22nd, 2021
 
 <p style="color:#ADD8E6">[NEW]</p>
