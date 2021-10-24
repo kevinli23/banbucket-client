@@ -18,6 +18,7 @@ const IconRow = () => {
 				display: 'flex',
 				flexDirection: 'row',
 				justifyContent: 'center',
+				marginTop: '16vh',
 			}}
 		>
 			<Link href="https://www.reddit.com/r/banano/" isExternal>

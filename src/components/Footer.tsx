@@ -57,10 +57,13 @@ const Footer = () => {
 				display: 'flex',
 				flexDirection: 'row',
 				justifyContent: 'center',
+				alignItems: 'center',
 				minWidth: '100vw',
 				maxHeight: '5vh',
 				minHeight: '5vh',
 				backgroundColor: '#212529',
+				boxShadow:
+					'0px 10px 13px -7px #000000, 0px -5px 12px 2px rgba(18,20,23,0.59)',
 			}}
 		>
 			<FooterLink route="/" text="Faucet" />

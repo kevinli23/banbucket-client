@@ -65,7 +65,7 @@ const ClaimBox = () => {
 
 	return (
 		<>
-			<Heading mt="20px" color="#E4C703" fontFamily="Aleo, serif" size="3xl">
+			<Heading mt="16vh" color="#E4C703" fontFamily="Aleo, serif" size="3xl">
 				BanBucket
 			</Heading>
 			<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
@@ -188,10 +188,9 @@ const ClaimBox = () => {
 				>
 					Claim Free Banano
 				</Button>
-				<Text color="white" mt="20px" mb="5px" fontSize="xl">
-					Learn More
-				</Text>
-				<IconRow />
+				<Tag mt="10px" color="white" backgroundColor="red.600">
+						abusers will be blacklisted
+				</Tag>
 				<div
 					style={{
 						display: 'flex',
@@ -206,18 +205,16 @@ const ClaimBox = () => {
 						marginTop: "20px",
 					}}>
 						<Stat color="white">
-							<StatLabel>BAN (CoinGecko)</StatLabel>
+							<StatLabel display="flex" flexDirection="row"><Text color="#E4C703" mr="5px">BAN</Text>(CoinGecko)</StatLabel>
 							<StatNumber>$ {price} USD</StatNumber>
-							<StatHelpText>
+							<StatHelpText color={change.charAt(0) === "-" ? "red.400" : "green.400"}>
 								<StatArrow type={change.charAt(0) === "-" ? "decrease" : "increase"} />
 									{change}%
 							</StatHelpText>
 						</Stat>
 					</div>
-					<Tag mt="10px" color="white" backgroundColor="red.600">
-						abusers will be blacklisted
-					</Tag>
 				</div>
+				<IconRow />
 			</div>
 		</>
 	);
