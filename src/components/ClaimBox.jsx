@@ -1,6 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Input, Button, Text, Heading, useToast, Tag, Stat, StatLabel, StatNumber, StatHelpText, StatArrow } from '@chakra-ui/react';
+import {
+	Input,
+	Button,
+	Text,
+	Heading,
+	useToast,
+	Tag,
+	Stat,
+	StatLabel,
+	StatNumber,
+	StatHelpText,
+	StatArrow,
+	Link,
+} from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
@@ -12,9 +25,9 @@ const ClaimBox = () => {
 	const [msg, setMsg] = useState('Please enter a valid Banano address');
 	const [loading, setLoading] = useState(false);
 	const [amount, setAmount] = useState(0);
-	const [price, setPrice] = useState("0");
-	const [change, setChange] = useState("0");
-	const toast = useToast()
+	const [price, setPrice] = useState('0');
+	const [change, setChange] = useState('0');
+	const toast = useToast();
 
 	useEffect(() => {
 		(async () => {
@@ -45,8 +58,8 @@ const ClaimBox = () => {
 			})
 				.then(async (res) => {
 					const json = await res.json();
-					setPrice(json.price)
-					setChange(json.change)
+					setPrice(json.price);
+					setChange(json.change);
 				})
 				.catch((_err) => {
 					return;
@@ -75,8 +88,8 @@ const ClaimBox = () => {
 				<BanIcon style={{ width: '20px', height: '20px' }} />
 			</div>
 			<div style={{ minHeight: '30px' }}>
-				{(!isValid && addr !== '') && (
-					<Text fontSize="lg" color='red.500'>
+				{!isValid && addr !== '' && (
+					<Text fontSize="lg" color="red.500">
 						{msg}
 					</Text>
 				)}
@@ -142,16 +155,16 @@ const ClaimBox = () => {
 							).catch((_) => {
 								setLoading(false);
 
-								if (!toast.isActive("server-connection")) {
+								if (!toast.isActive('server-connection')) {
 									toast({
-										id: "server-connection",
-										title: "Connection Error",
-										description: "Failed to connect to server",
-										status: "error",
+										id: 'server-connection',
+										title: 'Connection Error',
+										description: 'Failed to connect to server',
+										status: 'error',
 										duration: 3000,
 										isClosable: true,
-										position: "top",
-									})
+										position: 'top',
+									});
 								}
 
 								failed = true;
@@ -162,26 +175,26 @@ const ClaimBox = () => {
 
 								if (response.status === 400 || response.status === 500) {
 									toast({
-										title: "Bad Request",
+										title: 'Bad Request',
 										description: data.message,
-										status: "error",
+										status: 'error',
 										duration: 2500,
 										isClosable: true,
-										position: "top",
-									})
+										position: 'top',
+									});
 								} else {
 									toast({
-										title: "Successful Claim",
+										title: 'Successful Claim',
 										description: data.message,
-										status: "success",
+										status: 'success',
 										duration: 2500,
 										isClosable: true,
-										position: "top",
-									})
+										position: 'top',
+									});
 								}
 
 								setLoading(false);
-								setCaptcha("")
+								setCaptcha('');
 							}
 						}
 					}}
@@ -189,7 +202,7 @@ const ClaimBox = () => {
 					Claim Free Banano
 				</Button>
 				<Tag mt="10px" color="white" backgroundColor="red.600">
-						abusers will be blacklisted
+					abusers will be blacklisted
 				</Tag>
 				<div
 					style={{
@@ -199,17 +212,43 @@ const ClaimBox = () => {
 						alignItems: 'center',
 					}}
 				>
-					<div style={{
-						display: "flex",
-						flexDirection: "row",
-						marginTop: "20px",
-					}}>
+					<div
+						style={{
+							display: 'flex',
+							flexDirection: 'row',
+							marginTop: '20px',
+						}}
+					>
 						<Stat color="white">
-							<StatLabel display="flex" flexDirection="row"><Text color="#E4C703" mr="5px">BAN</Text>(CoinGecko)</StatLabel>
+							<StatLabel display="flex" flexDirection="row">
+								<Text color="#E4C703" mr="5px">
+									BAN
+								</Text>
+								(from
+								<Link
+									href="https://www.coingecko.com/en/coins/banano"
+									ml="5px"
+									_hover={{
+										textDecoration: 'none',
+										color: 'rgb(140, 198, 63)',
+									}}
+									_link={{
+										textDecoration: 'none',
+									}}
+									_focus={{
+										textDecoration: 'none',
+									}}
+									isExternal
+									color="white"
+								>
+									CoinGecko
+								</Link>
+								)
+							</StatLabel>
 							<StatNumber>$ {price} USD</StatNumber>
-							<StatHelpText color={change.charAt(0) === "-" ? "red.400" : "green.400"}>
-								<StatArrow type={change.charAt(0) === "-" ? "decrease" : "increase"} />
-									{change}%
+							<StatHelpText color={change.charAt(0) === '-' ? 'red.400' : 'green.400'}>
+								<StatArrow type={change.charAt(0) === '-' ? 'decrease' : 'increase'} />
+								{change}% (24h)
 							</StatHelpText>
 						</Stat>
 					</div>
