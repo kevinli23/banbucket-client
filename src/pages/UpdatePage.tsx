@@ -38,6 +38,10 @@ const UpdatePage = () => {
 					overrides: {
 						h1: {
 							component: Heading,
+							props: {
+								textDecoration: 'underline',
+								mb: '10px',
+							},
 						},
 						h2: {
 							component: Tag,

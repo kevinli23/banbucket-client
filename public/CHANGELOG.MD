@@ -1,6 +1,4 @@
-# October 24th, 2021
-
-&nbsp;
+# October 24th 2021
 
 <h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 
@@ -24,9 +22,7 @@
 
 &nbsp;
 
-# October 22nd, 2021
-
-&nbsp;
+# October 22nd 2021
 
 <h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 
@@ -50,9 +46,7 @@
 
 &nbsp;
 
-# October 21st, 2021
-
-&nbsp;
+# October 21st 2021
 
 <h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 
@@ -80,9 +74,7 @@
   
 &nbsp;
 
-# October 20th, 2021
-
-&nbsp;
+# October 20th 2021
 
 <h2 style="background-color:#ADD8E6;color:black">NEW</h2>
 

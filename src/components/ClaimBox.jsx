@@ -7,16 +7,11 @@ import {
 	Heading,
 	useToast,
 	Tag,
-	Stat,
-	StatLabel,
-	StatNumber,
-	StatHelpText,
-	StatArrow,
-	Link,
 } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
+import PriceBox from '../components/PriceBox'
 
 const ClaimBox = () => {
 	const [addr, setAddr] = useState('');
@@ -25,8 +20,6 @@ const ClaimBox = () => {
 	const [msg, setMsg] = useState('Please enter a valid Banano address');
 	const [loading, setLoading] = useState(false);
 	const [amount, setAmount] = useState(0);
-	const [price, setPrice] = useState('0');
-	const [change, setChange] = useState('0');
 	const toast = useToast();
 
 	useEffect(() => {
@@ -47,25 +40,6 @@ const ClaimBox = () => {
 				});
 		})();
 	}, [loading]);
-
-	useEffect(() => {
-		(async () => {
-			await fetch('https://banbucket.herokuapp.com/api/v1/price', {
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			})
-				.then(async (res) => {
-					const json = await res.json();
-					setPrice(json.price);
-					setChange(json.change);
-				})
-				.catch((_err) => {
-					return;
-				});
-		})();
-	}, [price, change]);
 
 	const captchaRef = useRef(null);
 
@@ -219,38 +193,7 @@ const ClaimBox = () => {
 							marginTop: '20px',
 						}}
 					>
-						<Stat color="white">
-							<StatLabel display="flex" flexDirection="row">
-								<Text color="#E4C703" mr="5px">
-									BAN
-								</Text>
-								(from
-								<Link
-									href="https://www.coingecko.com/en/coins/banano"
-									ml="5px"
-									_hover={{
-										textDecoration: 'none',
-										color: 'rgb(249, 233, 136)',
-									}}
-									_link={{
-										textDecoration: 'none',
-									}}
-									_focus={{
-										textDecoration: 'none',
-									}}
-									isExternal
-									color="rgb(140, 198, 63)"
-								>
-									CoinGecko
-								</Link>
-								)
-							</StatLabel>
-							<StatNumber color="#E4C703">${price} USD</StatNumber>
-							<StatHelpText color={change.charAt(0) === '-' ? 'red.400' : 'green.400'}>
-								<StatArrow type={change.charAt(0) === '-' ? 'decrease' : 'increase'} />
-								{change}% (24h)
-							</StatHelpText>
-						</Stat>
+						<PriceBox />
 					</div>
 				</div>
 				<IconRow />
