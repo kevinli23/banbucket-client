@@ -222,7 +222,7 @@ const ClaimBox = () => {
 						<Stat color="white">
 							<StatLabel display="flex" flexDirection="row">
 								<Text color="#E4C703" mr="5px">
-									Banano
+									BAN
 								</Text>
 								(from
 								<Link
