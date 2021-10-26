@@ -15,6 +15,11 @@ import PriceBox from '../components/PriceBox'
 
 import { DownloadIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 
+import {
+	faPaperPlane
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import useLocalStorage from '../hooks/localstorage'
 
 const ClaimBox = () => {
@@ -75,7 +80,7 @@ const ClaimBox = () => {
 				}}
 				isExternal
 			>
-				<Button mt="-5vh" mb="5vh" fontSize="lg" padding="10px" colorScheme="teal" fontFamily="Roboto, sans-serif" maxWidth="300px" leftIcon={<InfoOutlineIcon />}>
+				<Button mt="-5vh" mb="2vh" fontSize="lg" padding="10px" colorScheme="teal" fontFamily="Roboto, sans-serif" maxWidth="300px" leftIcon={<InfoOutlineIcon />}>
 					 Change your REP to earn more
 				</Button>
 					</Link>
@@ -86,8 +91,9 @@ const ClaimBox = () => {
 				<div style={{
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'flex-start', 
-					minWidth: '125px'
+					alignItems: 'flex-end', 
+					minWidth: '115px',
+					paddingRight: "20px"
 				}}>
 					<div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
 						<Text color="white" fontSize="xl" m="5px">
@@ -96,7 +102,7 @@ const ClaimBox = () => {
 						<BanIcon style={{ width: '20px', height: '20px' }} />
 					</div>
 					<div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '12px'}}>
-						<DownloadIcon color="white" fontSize="xl"/>
+						<FontAwesomeIcon color="white" icon={faPaperPlane} size="md" />
 						<Text color="white" fontSize="xl" m="5px">
 							0.10 
 						</Text>
