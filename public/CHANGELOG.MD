@@ -1,3 +1,13 @@
+# October 25th 2021
+
+<h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
+
+• Update faucet page
+
+• Your address is now stored to local storage so you don't have to reenter your address when revisting
+
+&nbsp;
+
 # October 24th 2021
 
 <h2 style="background-color:#ADD8E6;color:black">NEW</h2>

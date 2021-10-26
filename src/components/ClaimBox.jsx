@@ -7,20 +7,30 @@ import {
 	Heading,
 	useToast,
 	Tag,
+	Link,
 } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import IconRow from './IconRow';
 import { ReactComponent as BanIcon } from '../banicon.svg';
 import PriceBox from '../components/PriceBox'
 
+import { DownloadIcon, InfoOutlineIcon } from '@chakra-ui/icons'
+
+import useLocalStorage from '../hooks/localstorage'
+
 const ClaimBox = () => {
-	const [addr, setAddr] = useState('');
+	const [addr, setAddr] = useLocalStorage("ban_addr", "")
 	const [isValid, setIsValid] = useState(false);
 	const [captcha, setCaptcha] = useState('');
 	const [msg, setMsg] = useState('Please enter a valid Banano address');
 	const [loading, setLoading] = useState(false);
 	const [amount, setAmount] = useState(0);
 	const toast = useToast();
+
+	useEffect(() => {
+		setIsValid(
+			addr.startsWith('ban_') && addr.length === 64
+		);
+	}, [addr])
 
 	useEffect(() => {
 		(async () => {
@@ -52,14 +62,48 @@ const ClaimBox = () => {
 
 	return (
 		<>
-			<Heading mt="16vh" color="#E4C703" fontFamily="Aleo, serif" size="3xl">
+						<Link
+				href="https://www.reddit.com/r/banano/comments/qeuig8/banbucket_faucet_change_your_rep_to_earn_more/"
+				_hover={{
+					textDecoration: 'none',
+				}}
+				_link={{
+					textDecoration: 'none',
+				}}
+				_focus={{
+					textDecoration: 'none',
+				}}
+				isExternal
+			>
+				<Button mt="-5vh" mb="5vh" fontSize="lg" padding="10px" colorScheme="teal" fontFamily="Roboto, sans-serif" maxWidth="300px" leftIcon={<InfoOutlineIcon />}>
+					 Change your REP to earn more
+				</Button>
+					</Link>
+			<Heading color="#E4C703" fontFamily="Aleo, serif" size="4xl">
 				BanBucket
 			</Heading>
-			<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-				<Text color="white" fontSize="xl" m="5px">
-					{amount}
-				</Text>
-				<BanIcon style={{ width: '20px', height: '20px' }} />
+			<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', minWidth: '300px', maxWidth: '300px', marginBottom: '10px' }}>
+				<div style={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'flex-start', 
+					minWidth: '125px'
+				}}>
+					<div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+						<Text color="white" fontSize="xl" m="5px">
+							{amount}
+						</Text>
+						<BanIcon style={{ width: '20px', height: '20px' }} />
+					</div>
+					<div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '12px'}}>
+						<DownloadIcon color="white" fontSize="xl"/>
+						<Text color="white" fontSize="xl" m="5px">
+							0.10 
+						</Text>
+						<BanIcon style={{ width: '20px', height: '20px' }} />
+					</div>
+				</div>
+				<PriceBox />
 			</div>
 			<div style={{ minHeight: '30px' }}>
 				{!isValid && addr !== '' && (
@@ -178,25 +222,7 @@ const ClaimBox = () => {
 				<Tag mt="10px" color="white" backgroundColor="red.600">
 					abusers will be blacklisted
 				</Tag>
-				<div
-					style={{
-						display: 'flex',
-						flexDirection: 'column',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}
-				>
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'row',
-							marginTop: '20px',
-						}}
-					>
-						<PriceBox />
-					</div>
-				</div>
-				<IconRow />
+				{/* <IconRow /> */}
 			</div>
 		</>
 	);
