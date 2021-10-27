@@ -82,7 +82,7 @@ const Header = ({ amount }: HeaderProps) => {
 							marginLeft: '12px',
 						}}
 					>
-						<FontAwesomeIcon color="white" icon={faPaperPlane} size="lg" />
+						<FontAwesomeIcon color="white" icon={faPaperPlane} size="1x" />
 						<Text color="white" fontSize="xl" m="5px">
 							0.10
 						</Text>
