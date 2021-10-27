@@ -38,7 +38,7 @@ const PriceBox = () => {
 			color="white"
 			backgroundColor="#1e1f26"
 			boxShadow="0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)"
-			padding="15px"
+			padding="10px"
 			borderRadius="15px"
 		>
 			<StatLabel display="flex" flexDirection="row">
