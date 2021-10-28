@@ -8,15 +8,12 @@ import {
 	ModalBody,
 	ModalCloseButton,
 	HStack,
-	Image,
 	Button,
 	Text,
-	IconButton,
 	useClipboard,
 	useToast,
 } from '@chakra-ui/react';
 
-import { CopyIcon } from '@chakra-ui/icons';
 import QRCode from 'react-qr-code';
 
 interface DonationModalProps {
@@ -46,7 +43,7 @@ const DonationModal = ({ isOpen, onClose }: DonationModalProps) => {
 	}, [hasCopied, toast]);
 
 	return (
-		<Modal isOpen={isOpen} onClose={onClose}>
+		<Modal isOpen={isOpen} onClose={onClose} isCentered>
 			<ModalOverlay />
 			<ModalContent
 				maxW="300px"
