@@ -14,9 +14,12 @@ const PriceBox = () => {
 	const [price, setPrice] = useState('0');
 	const [change, setChange] = useState('0');
 
+	const apiLocation =
+		process.env.REACT_APP_API_LOCATION || 'https://banbucket.herokuapp.com';
+
 	useEffect(() => {
 		(async () => {
-			await fetch('https://banbucket.herokuapp.com/api/v1/price', {
+			await fetch(`${apiLocation}/api/v1/price`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json',
@@ -31,7 +34,7 @@ const PriceBox = () => {
 					return;
 				});
 		})();
-	}, [price, change]);
+	}, [price, change, apiLocation]);
 
 	return (
 		<Stat

@@ -34,11 +34,12 @@ const Header = ({ amount }: HeaderProps) => {
 					mt="-5vh"
 					mb="2vh"
 					fontSize="lg"
-					padding="10px"
+					// padding="10px"
+					paddingTop="5px"
 					colorScheme="teal"
-					fontFamily="Roboto, sans-serif"
+					fontFamily="Aleo, sans-serif"
 					maxWidth="300px"
-					leftIcon={<InfoOutlineIcon />}
+					leftIcon={<InfoOutlineIcon pb="2px" />}
 				>
 					Change your REP to earn more
 				</Button>

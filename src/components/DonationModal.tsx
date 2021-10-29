@@ -32,7 +32,7 @@ const DonationModal = ({ isOpen, onClose }: DonationModalProps) => {
 		if (!toast.isActive('copied') && hasCopied) {
 			toast({
 				id: 'copied',
-				title: 'Copy',
+				title: 'Faucet',
 				description: 'Faucet Address copied to clipboard',
 				status: 'info',
 				duration: 3000,

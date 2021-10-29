@@ -23,11 +23,14 @@ const ClaimBox = () => {
 	const [addr, setAddr] = useLocalStorage('ban_addr', '');
 	const [isValid, setIsValid] = useState(false);
 	const [captcha, setCaptcha] = useState('');
-	const [msg] = useState('Please enter a valid Banano address');
+	// const [msg] = useState('Please enter a valid Banano address');
 	const [loading, setLoading] = useState(false);
 	const [amount, setAmount] = useState(0);
 	const toast = useToast();
 	const { isOpen, onOpen, onClose } = useDisclosure();
+
+	const apiLocation =
+		process.env.REACT_APP_API_LOCATION || 'https://banbucket.herokuapp.com';
 
 	useEffect(() => {
 		setIsValid(addr.startsWith('ban_') && addr.length === 64);
@@ -35,7 +38,7 @@ const ClaimBox = () => {
 
 	useEffect(() => {
 		(async () => {
-			await fetch('https://banbucket.herokuapp.com/api/v1/amount', {
+			await fetch(`${apiLocation}/api/v1/amount`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json',
@@ -50,7 +53,7 @@ const ClaimBox = () => {
 					return;
 				});
 		})();
-	}, [loading]);
+	}, [loading, apiLocation]);
 
 	const captchaRef = useRef<HCaptcha>(null);
 
@@ -64,19 +67,13 @@ const ClaimBox = () => {
 	return (
 		<>
 			<Header amount={amount} />
-			<div style={{ minHeight: '30px' }}>
-				{!isValid && addr !== '' && (
-					<Text fontSize="lg" color="red.500">
-						{msg}
-					</Text>
-				)}
-			</div>
 			<div
 				style={{
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
 					minWidth: '300px',
+					marginTop: '10px',
 				}}
 			>
 				<Input
@@ -85,7 +82,7 @@ const ClaimBox = () => {
 					onChange={handleChange}
 					size="md"
 					color="white"
-					borderColor="white"
+					borderColor={addr.length === 0 ? 'white' : isValid ? 'green' : 'red'}
 					focusBorderColor="#E4C703"
 					_hover={{
 						borderColor: '#E4C703',
@@ -128,10 +125,7 @@ const ClaimBox = () => {
 								body: JSON.stringify({ addr: addr, captcha: captcha }),
 							};
 							failed = false;
-							await fetch(
-								'https://banbucket.herokuapp.com/api/v1/claim',
-								requestOptions
-							)
+							await fetch(`${apiLocation}/api/v1/claim`, requestOptions)
 								.then(async (res) => {
 									const data = await res.json();
 
