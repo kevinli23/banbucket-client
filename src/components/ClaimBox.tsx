@@ -172,9 +172,6 @@ const ClaimBox = () => {
 				>
 					Claim Free Banano
 				</Button>
-				<Tag mt="10px" color="white" backgroundColor="red.600">
-					ABUSERS WILL BE BANNED
-				</Tag>
 				<VStack>
 					<IconButton
 						aria-label="donate"

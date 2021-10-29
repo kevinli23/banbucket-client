@@ -85,7 +85,7 @@ const Header = ({ amount }: HeaderProps) => {
 					>
 						<FontAwesomeIcon color="white" icon={faPaperPlane} size="1x" />
 						<Text color="white" fontSize="xl" m="5px">
-							0.10
+							0.05
 						</Text>
 						<BanIcon style={{ width: '20px', height: '20px' }} />
 					</div>

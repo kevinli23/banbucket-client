@@ -1,3 +1,11 @@
+# October 29th 2021
+
+<h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
+
+• Given some recent abuse and the surge in price the faucet rate will be temporarily reduced to 0.05
+
+&nbsp;
+
 # October 25th 2021
 
 <h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
