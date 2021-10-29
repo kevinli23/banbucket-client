@@ -61,8 +61,7 @@ const DonatePage = () => {
 			amount: 1,
 		},
 	]);
-	const apiLocation =
-		process.env.REACT_APP_API_LOCATION || 'https://banbucket.herokuapp.com';
+	const apiLocation = 'https://banbucket.herokuapp.com';
 
 	const { hasCopied, onCopy } = useClipboard(
 		'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu'

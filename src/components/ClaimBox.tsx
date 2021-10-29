@@ -29,8 +29,7 @@ const ClaimBox = () => {
 	const toast = useToast();
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
-	const apiLocation =
-		process.env.REACT_APP_API_LOCATION || 'https://banbucket.herokuapp.com';
+	const apiLocation = 'https://banbucket.herokuapp.com';
 
 	useEffect(() => {
 		setIsValid(addr.startsWith('ban_') && addr.length === 64);
