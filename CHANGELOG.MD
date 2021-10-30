@@ -1,6 +1,20 @@
-# October 29th 2021
+# October 30th 2021
 
 <h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
+
+• Restyle faucet page
+
+&nbsp;
+
+<h2 style="background-color:#FFAF00;color:black">CHANGED</h2>
+
+• Nerf rates for claimers with a kalium or genesis banano representative to 0.02 (to deter robo accounts) - consider switching to enjoy the full rate!
+
+&nbsp;
+
+# October 29th 2021
+
+<h2 style="background-color:#ffb38a;color:black">CHANGED</h2>
 
 • Given some recent abuse and the surge in price the faucet rate will be temporarily reduced to 0.05
 
