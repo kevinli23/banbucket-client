@@ -63,6 +63,7 @@ const Footer = () => {
 				maxHeight: '5vh',
 				minHeight: '5vh',
 				backgroundColor: '#212529',
+				fontFamily: 'Roboto, sans-serif',
 				boxShadow:
 					'0px 10px 13px -7px #000000, 0px -5px 12px 2px rgba(18,20,23,0.59)',
 			}}
