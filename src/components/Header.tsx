@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Heading, Text } from '@chakra-ui/react';
 
@@ -12,7 +12,30 @@ interface HeaderProps {
 	amount: number;
 }
 
+const apiLocation = 'https://banbucket.herokuapp.com';
+
 const Header = ({ amount }: HeaderProps) => {
+	const [send, setSend] = useState(0);
+
+	useEffect(() => {
+		(async () => {
+			await fetch(`${apiLocation}/api/v1/payout`, {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			})
+				.then(async (res) => {
+					const json = await res.json();
+					setSend(json.message);
+				})
+				.catch((_err) => {
+					setSend(0);
+					return;
+				});
+		})();
+	}, []);
+
 	return (
 		<>
 			<Heading color="#E4C703" fontFamily="Aleo, serif" size="4xl">
@@ -56,7 +79,7 @@ const Header = ({ amount }: HeaderProps) => {
 					>
 						<FontAwesomeIcon color="white" icon={faPaperPlane} size="1x" />
 						<Text color="white" fontSize="xl" m="5px">
-							0.05
+							{send}
 						</Text>
 						<BanIcon style={{ width: '20px', height: '20px' }} />
 					</div>

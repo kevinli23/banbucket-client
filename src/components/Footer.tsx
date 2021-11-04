@@ -89,7 +89,7 @@ const Footer = () => {
 				isExternal
 				color="white"
 			>
-				<Text>SpyGlass</Text>
+				<Text>Stats</Text>
 			</Link>
 		</div>
 	);
