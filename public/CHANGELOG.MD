@@ -1,3 +1,12 @@
+# November 6th 2021
+
+<h2 style="background-color:#FFAF00;color:black">CHANGED</h2>
+
+• Payout for OnlyBans rep is now 0.01 due to recent abuse by a robot monkey. JungleTV Rep still has the 
+**30%** chance to earn double the faucet rate
+
+&nbsp;
+
 # October 30th 2021
 
 <h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
