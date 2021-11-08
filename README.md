@@ -1,5 +1,7 @@
 # Frontend Client for BanBucket
 
+[![Website banbucket.ninja](https://img.shields.io/website-up-down-green-red/https/banbucket.ninja.svg)](https://www.banbucket.ninja/)
+
 ## What is BanBucket?
 
 BanBucket is an opensource Banano faucet which gives away free Banano (a fork of the cryptocurrency Nano)
@@ -24,11 +26,9 @@ Being fast and feeless is not only a great green alternative to other cryptocurr
 
 [Nano](https://nano.org/)
 
-## Tech Stack
-Made with:
-- React
-- TypeScript
-- React Router
+## Made with
 
-Deployed on:
-- Github Pages
+[![JavaScript](https://img.shields.io/badge/--F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com/)
+[![TypeScript](https://img.shields.io/badge/--3178C6?logo=typescript&logoColor=ffffff)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&logoColor=white)](https://reactrouter.com/)

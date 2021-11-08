@@ -194,7 +194,7 @@ const DonatePage = () => {
 						{donators.map((donation, index) => (
 							<Tr>
 								<Td color={GetColor(index)}>{donation.addr}</Td>
-								<Td isNumeric>{donation.amount}</Td>
+								<Td isNumeric>{Math.round(donation.amount * 100) / 100}</Td>
 							</Tr>
 						))}
 					</Tbody>
