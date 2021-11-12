@@ -19,8 +19,6 @@
 
 • Nerf rates for claimers with a kalium or genesis banano representative to 0.01 (to deter robo accounts) - consider switching to enjoy the full rate!
 
-• Added framework for Google Adsense (the current plan is to have 1 small ad at the top to help cover the server costs)
-
 &nbsp;
 
 # October 29th 2021
