@@ -18,9 +18,6 @@ const FooterLink = ({ route, text }: FooterLinkProps) => {
 				textDecoration: 'none',
 				color: '#E4C703',
 			}}
-			_link={{
-				textDecoration: 'none',
-			}}
 			_active={{
 				textDecoration: 'none',
 			}}
@@ -79,9 +76,6 @@ const Footer = () => {
 				_hover={{
 					textDecoration: 'none',
 					color: '#E4C703',
-				}}
-				_link={{
-					textDecoration: 'none',
 				}}
 				_focus={{
 					textDecoration: 'none',

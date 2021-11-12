@@ -1,6 +1,7 @@
 # Frontend Client for BanBucket
 
 [![Website banbucket.ninja](https://img.shields.io/website-up-down-green-red/https/banbucket.ninja.svg)](https://www.banbucket.ninja/)
+[![GitHub latest commit](https://badgen.net/github/last-commit/kevinli23/banbucket-client)](https://GitHub.com/kevinli23/banbucket-client/commit/)
 
 ## What is BanBucket?
 

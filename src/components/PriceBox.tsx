@@ -51,12 +51,10 @@ const PriceBox = () => {
 				<Link
 					href="https://www.coingecko.com/en/coins/banano"
 					ml="5px"
+					textDecoration="none"
 					_hover={{
 						textDecoration: 'none',
 						color: 'rgb(249, 233, 136)',
-					}}
-					_link={{
-						textDecoration: 'none',
 					}}
 					_focus={{
 						textDecoration: 'none',
