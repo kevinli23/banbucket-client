@@ -5,7 +5,7 @@ import { Text, useDisclosure, Button } from '@chakra-ui/react';
 
 import DonationModal from '../components/DonationModal';
 
-import Banner from '../components/Banner';
+// import Banner from '../components/Banner';
 
 const ClaimPage = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
