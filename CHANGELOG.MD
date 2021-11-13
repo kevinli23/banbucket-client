@@ -1,3 +1,12 @@
+# November 12th 2021
+
+<h2 style="background-color:#ADD8E6;color:black">NEW</h2>
+
+• Added a stats page which includes the total number of claims, daily number of claims,
+unique number of claims and average daily claims (as well as a graph to go alongside it)
+
+&nbsp;
+
 # November 6th 2021
 
 <h2 style="background-color:#FFAF00;color:black">CHANGED</h2>
