@@ -32,5 +32,5 @@ Being fast and feeless is not only a great green alternative to other cryptocurr
 
 [![JavaScript](https://img.shields.io/badge/--F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com/)
 [![TypeScript](https://img.shields.io/badge/--3178C6?logo=typescript&logoColor=ffffff)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/-React.js-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&logoColor=white)](https://reactrouter.com/)

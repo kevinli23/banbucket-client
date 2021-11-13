@@ -2,6 +2,7 @@ import React from 'react';
 import ClaimBox from '../components/ClaimBox';
 
 import { Text, useDisclosure, Button } from '@chakra-ui/react';
+import PageBody from '../components/PageBody';
 
 import DonationModal from '../components/DonationModal';
 
@@ -11,18 +12,7 @@ const ClaimPage = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
-		<div
-			className="App"
-			style={{
-				minWidth: '100vw',
-				minHeight: '95vh',
-				backgroundColor: '#212529',
-				display: 'flex',
-				flexDirection: 'column',
-				alignItems: 'center',
-				justifyContent: 'center',
-			}}
-		>
+		<PageBody>
 			{/* <Banner /> */}
 			<ClaimBox />
 			<div
@@ -64,7 +54,7 @@ const ClaimPage = () => {
 				</Text>
 			</div>
 			<DonationModal isOpen={isOpen} onClose={onClose} />
-		</div>
+		</PageBody>
 	);
 };
 

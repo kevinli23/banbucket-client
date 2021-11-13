@@ -71,20 +71,7 @@ const Footer = () => {
 			<FooterDot />
 			<FooterLink route="/updates" text="Updates" />
 			<FooterDot />
-			<Link
-				href="https://www.yellowspyglass.com/account/ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu"
-				_hover={{
-					textDecoration: 'none',
-					color: '#E4C703',
-				}}
-				_focus={{
-					textDecoration: 'none',
-				}}
-				isExternal
-				color="white"
-			>
-				<Text>Stats</Text>
-			</Link>
+			<FooterLink route="/stats" text="Stats" />
 		</div>
 	);
 };
