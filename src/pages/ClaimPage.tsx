@@ -1,29 +1,34 @@
 import React from 'react';
 import ClaimBox from '../components/ClaimBox';
 
-import { Text, useDisclosure, Button } from '@chakra-ui/react';
-import PageBody from '../components/PageBody';
+import { Text, useDisclosure, Button, Box } from '@chakra-ui/react';
 
 import DonationModal from '../components/DonationModal';
 
-// import Banner from '../components/Banner';
+import Banner from '../components/Banner';
 
 const ClaimPage = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
-		<PageBody>
-			{/* <Banner /> */}
+		<Box
+			minW="100vw"
+			minH="95vh"
+			backgroundColor="#212529"
+			d="flex"
+			flexDir="column"
+			alignItems="center"
+			justifyContent="center"
+		>
+			<Banner />
 			<ClaimBox />
-			<div
-				style={{
-					justifySelf: 'flex-end',
-					marginTop: 'auto',
-					marginBottom: '10px',
-					alignItems: 'center',
-					display: 'flex',
-					flexDirection: 'column',
-				}}
+			<Box
+				justifySelf="flex-end"
+				d="flex"
+				mt="auto"
+				mb="10px"
+				alignItems="center"
+				flexDir="column"
 			>
 				<Button colorScheme="blue" mb="10px" fontSize="xl" onClick={onOpen}>
 					Donate to BanBucket
@@ -52,9 +57,9 @@ const ClaimPage = () => {
 						apply.
 					</Text>
 				</Text>
-			</div>
+			</Box>
 			<DonationModal isOpen={isOpen} onClose={onClose} />
-		</PageBody>
+		</Box>
 	);
 };
 

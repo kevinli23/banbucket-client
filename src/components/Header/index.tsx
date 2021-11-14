@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Heading, Text } from '@chakra-ui/react';
 
-import { ReactComponent as BanIcon } from '../banicon.svg';
-import PriceBox from './PriceBox';
+import { ReactComponent as BanIcon } from '../../banicon.svg';
+import PriceBox from '../PriceBox';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
