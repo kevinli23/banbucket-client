@@ -219,7 +219,7 @@ const StatsPage = () => {
 						}
 						percent={Math.abs(
 							Math.round(
-								((todayDailyAverage - yesterdayDailyAverage) * 100000) /
+								((todayDailyAverage - yesterdayDailyAverage) * 1000) /
 									yesterdayDailyAverage
 							) / 1000
 						)}
