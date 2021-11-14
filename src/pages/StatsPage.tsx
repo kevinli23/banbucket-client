@@ -124,13 +124,14 @@ const StatsPage = () => {
 		if (stats.daily_claims) {
 			setTodayDailyAverage(
 				Math.round(
-					(stats.total_claims * 1000) / Object.keys(stats.daily_claims).length
+					(stats.total_claims * 100000) / Object.keys(stats.daily_claims).length
 				) / 1000
 			);
 
 			setYesterdayDailyAverage(
 				Math.round(
-					(stats.total_claims * 1000) / (Object.keys(stats.daily_claims).length - 1)
+					(stats.total_claims * 100000) /
+						(Object.keys(stats.daily_claims).length - 1)
 				) / 1000
 			);
 
@@ -180,7 +181,8 @@ const StatsPage = () => {
 						type="increase"
 						percent={
 							Math.round(
-								(stats.today_claims * 1000) / (stats.total_claims - stats.today_claims)
+								(stats.today_claims * 100000) /
+									(stats.total_claims - stats.today_claims)
 							) / 1000
 						}
 					/>
@@ -193,7 +195,7 @@ const StatsPage = () => {
 						}
 						percent={Math.abs(
 							Math.round(
-								((stats.today_claims - stats.yesterday_claims) * 1000) /
+								((stats.today_claims - stats.yesterday_claims) * 100000) /
 									stats.yesterday_claims
 							) / 1000
 						)}
@@ -217,7 +219,7 @@ const StatsPage = () => {
 						}
 						percent={Math.abs(
 							Math.round(
-								((todayDailyAverage - yesterdayDailyAverage) * 1000) /
+								((todayDailyAverage - yesterdayDailyAverage) * 100000) /
 									yesterdayDailyAverage
 							) / 1000
 						)}
