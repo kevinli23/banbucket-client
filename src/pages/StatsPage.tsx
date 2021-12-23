@@ -68,10 +68,11 @@ const StatWrapper = ({ title, value, type, percent }: StatItemProps) => {
 			pb="5px"
 			borderRadius="15px"
 			maxW="140px"
+			fontFamily="SF Mono"
 		>
 			<StatLabel>{title}</StatLabel>
 			<StatNumber color="#e4c703">{value}</StatNumber>
-			<StatHelpText>
+			<StatHelpText fontSize="12px">
 				<StatArrow type={type} />
 				{percent}% (24h)
 			</StatHelpText>
@@ -139,10 +140,9 @@ const StatsPage = () => {
 			for (const [date, amount] of Object.entries(stats.daily_claims)) {
 				const d = new Date(date);
 				graphEntries.push({
-					name: `${d.getUTCMonth()}/${d.getUTCDate()}/${d
-						.getUTCFullYear()
-						.toString()
-						.substring(2)}`,
+					name: `${
+						d.getUTCMonth() + 1
+					}/${d.getUTCDate()}/${d.getUTCFullYear().toString().substring(2)}`,
 					claims: amount,
 				});
 			}
@@ -166,10 +166,10 @@ const StatsPage = () => {
 				color: 'white',
 			}}
 		>
-			<Heading size="2xl" color="#e4c703" mt="10px">
+			<Heading size="2xl" color="#e4c703" mt="5vh" fontFamily="SF Mono">
 				BanBucket Stats
 			</Heading>
-			<Text>
+			<Text fontFamily="SF Mono">
 				Last Updated: <span style={{ color: '#80DAE0' }}>{lastUpdated}</span>
 			</Text>
 			<Box m="20px" d="flex" flexDir="column" minW="100vw" alignItems="center">
@@ -233,9 +233,6 @@ const StatsPage = () => {
 				flexDir="column"
 				alignItems="center"
 			>
-				<Heading color="white" size="md">
-					Daily Claims
-				</Heading>
 				<LineChart
 					width={isMobile ? 350 : 660}
 					height={isMobile ? 200 : 400}
@@ -243,8 +240,13 @@ const StatsPage = () => {
 				>
 					<Line type="monotone" dataKey="claims" />
 					<CartesianGrid stroke="white" />
-					<XAxis dataKey="name" stroke="white" />
-					<YAxis stroke="white" />
+					<XAxis
+						fontFamily="SF Mono"
+						fontSize="13px"
+						dataKey="name"
+						stroke="white"
+					/>
+					<YAxis fontFamily="SF Mono" stroke="white" />
 					<Tooltip contentStyle={{ color: 'black' }} />
 				</LineChart>
 			</Box>

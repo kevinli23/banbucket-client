@@ -2,12 +2,123 @@
 
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', 'Segoe UI', 'Roboto',
+		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@font-face {
+	font-family: 'Calibre';
+	src: url('./fonts/Calibre/Calibre-Regular.woff2') format('woff2'),
+		url('./fonts/Calibre/Calibre-Regular.woff') format('woff');
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'Calibre';
+	src: url('./fonts/Calibre/Calibre-RegularItalic.woff2') format('woff2'),
+		url('./fonts/Calibre/Calibre-RegularItalic.woff') format('woff');
+	font-style: italic;
+	font-weight: 400;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'Calibre';
+	src: url('./fonts/Calibre/Calibre-Medium.woff2') format('woff2'),
+		url('./fonts/Calibre/Calibre-Medium.woff') format('woff');
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'Calibre';
+	src: url('./fonts/Calibre/Calibre-MediumItalic.woff2') format('woff2'),
+		url('./fonts/Calibre/Calibre-MediumItalic.woff') format('woff');
+	font-style: italic;
+	font-weight: 500;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'Calibre';
+	src: url('./fonts/Calibre/Calibre-Semibold.woff2') format('woff2'),
+		url('./fonts/Calibre/Calibre-Semibold.woff') format('woff');
+	font-style: normal;
+	font-weight: 600;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'Calibre';
+	src: url('./fonts/Calibre/Calibre-SemiboldItalic.woff2') format('woff2'),
+		url('./fonts/Calibre/Calibre-SemiboldItalic.woff') format('woff');
+	font-style: italic;
+	font-weight: 600;
+	font-display: auto;
+}
+
+/* SF MONO */
+
+@font-face {
+	font-family: 'SF Mono';
+	src: url('./fonts/SFMono/SFMono-Regular.woff2') format('woff2'),
+		url('./fonts/SFMono/SFMono-Regular.woff') format('woff');
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'SF Mono';
+	src: url('./fonts/SFMono/SFMono-RegularItalic.woff2') format('woff2'),
+		url('./fonts/SFMono/SFMono-RegularItalic.woff') format('woff');
+	font-style: italic;
+	font-weight: 400;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'SF Mono';
+	src: url('./fonts/SFMono/SFMono-Medium.woff2') format('woff2'),
+		url('./fonts/SFMono/SFMono-Medium.woff') format('woff');
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'SF Mono';
+	src: url('./fonts/SFMono/SFMono-MediumItalic.woff2') format('woff2'),
+		url('./fonts/SFMono/SFMono-MediumItalic.woff') format('woff');
+	font-style: italic;
+	font-weight: 500;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'SF Mono';
+	src: url('./fonts/SFMono/SFMono-Semibold.woff2') format('woff2'),
+		url('./fonts/SFMono/SFMono-Semibold.woff') format('woff');
+	font-style: normal;
+	font-weight: 600;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'SF Mono';
+	src: url('./fonts/SFMono/SFMono-SemiboldItalic.woff2') format('woff2'),
+		url('./fonts/SFMono/SFMono-SemiboldItalic.woff') format('woff');
+	font-style: italic;
+	font-weight: 600;
+	font-display: auto;
 }
