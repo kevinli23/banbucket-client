@@ -131,7 +131,8 @@ const StatsPage = () => {
 
 			setYesterdayDailyAverage(
 				Math.round(
-					(stats.total_claims * 1000) / (Object.keys(stats.daily_claims).length - 1)
+					((stats.total_claims - stats.today_claims) * 1000) /
+						(Object.keys(stats.daily_claims).length - 1)
 				) / 1000
 			);
 

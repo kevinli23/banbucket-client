@@ -30,7 +30,7 @@ const UpdatePage = () => {
 				color: 'white',
 			}}
 		>
-			<Heading mt="20px" color="#E4C703" fontFamily="Aleo, serif" size="3xl">
+			<Heading mt="20px" color="#E4C703" fontFamily="SF Mono" size="3xl">
 				Update Logs
 			</Heading>
 			<Markdown
@@ -39,8 +39,8 @@ const UpdatePage = () => {
 						h1: {
 							component: Heading,
 							props: {
-								textDecoration: 'underline',
 								mb: '10px',
+								fontFamily: 'SF Mono',
 							},
 						},
 						h2: {
