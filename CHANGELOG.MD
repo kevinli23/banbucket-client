@@ -1,3 +1,11 @@
+# December 25th 2021
+
+<h2 style="background-color:#1FD537;color:#E40010">HOLIDAY</h2>
+
+• Merry Christmas! Faucet payouts will be increased to 0.19 until 11:59 PM GMT
+
+&nbsp;
+
 # November 12th 2021
 
 <h2 style="background-color:#ADD8E6;color:black">NEW</h2>
