@@ -26,8 +26,8 @@ import { StatItemProps, StatsTypes } from '../types/banbucket-types';
 
 const defaultStats = {
 	total_claims: 5173,
-	today_claims: 176,
-	yesterday_claims: 258,
+	today_claims: 500,
+	yesterday_claims: 123,
 	unique_claims: 1731,
 	daily_claims: {
 		'2021-10-20': 8,
@@ -52,8 +52,8 @@ const defaultStats = {
 		'2021-11-08': 283,
 		'2021-11-09': 270,
 		'2021-11-10': 247,
-		'2021-11-11': 258,
-		'2021-11-12': 176,
+		'2021-11-11': 123,
+		'2021-11-12': 500,
 	},
 	last_updated: 1636762176,
 };
@@ -67,7 +67,7 @@ const StatWrapper = ({ title, value, type, percent }: StatItemProps) => {
 			padding="10px"
 			pb="5px"
 			borderRadius="15px"
-			maxW="140px"
+			maxW="150px"
 			fontFamily="SF Mono"
 		>
 			<StatLabel>{title}</StatLabel>
