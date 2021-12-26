@@ -1,3 +1,11 @@
+# December 26th 2021
+
+<h2 style="background-color:#ffb38a;color:black">IMPROVED</h2>
+
+• The availability of your next claim is now shown (relies on localstorage)
+
+&nbsp;
+
 # December 25th 2021
 
 <h2 style="background-color:#1FD537;color:#E40010">HOLIDAY</h2>
