@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Input, Button, useToast } from '@chakra-ui/react';
+import { Input, Button, useToast, Tag } from '@chakra-ui/react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import Header from './Header';
 
@@ -8,6 +8,9 @@ import useLocalStorage from '../hooks/localstorage';
 
 const ClaimBox = () => {
 	const [addr, setAddr] = useLocalStorage('ban_addr', '');
+	const [lastClaim, setLastClaim] = useLocalStorage('last_claim', -1);
+	const [nextClaimText, setNextClaimText] = useState('');
+	const [currentTime, setCurrentTime] = useState(Date.now());
 	const [isValid, setIsValid] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [amount, setAmount] = useState(0);
@@ -37,6 +40,36 @@ const ClaimBox = () => {
 				});
 		})();
 	}, [loading, apiLocation]);
+
+	useEffect(() => {
+		setInterval(() => {
+			setCurrentTime(Date.now());
+		}, 1000);
+	}, []);
+
+	useEffect(() => {
+		if (lastClaim > 0) {
+			let nextClaimDate = new Date(lastClaim);
+			nextClaimDate.setHours(nextClaimDate.getHours() + 15);
+
+			const diff = nextClaimDate.getTime() - currentTime;
+
+			if (diff <= 0) {
+				setNextClaimText('Your next claim is available');
+			} else {
+				let hour_rounded = Math.floor(diff / 3600000);
+
+				const minutes = (diff / 3600000 - hour_rounded) * 60;
+				let minutes_rounded = Math.floor(minutes);
+
+				let seconds_rounded = Math.floor((minutes - minutes_rounded) * 60);
+
+				setNextClaimText(
+					`Your next claim is in ${hour_rounded}h ${minutes_rounded}m ${seconds_rounded}s`
+				);
+			}
+		}
+	}, [currentTime, lastClaim]);
 
 	const captchaRef = useRef<HCaptcha>(null);
 
@@ -118,6 +151,7 @@ const ClaimBox = () => {
 											isClosable: true,
 											position: 'top',
 										});
+										setLastClaim(Date.now());
 									}
 
 									setLoading(false);
@@ -163,6 +197,14 @@ const ClaimBox = () => {
 				>
 					Claim Free Banano
 				</Button>
+				{nextClaimText !== '' && (
+					<Tag
+						mt="10px"
+						colorScheme={nextClaimText.endsWith('available') ? 'green' : 'red'}
+					>
+						{nextClaimText}
+					</Tag>
+				)}
 			</div>
 		</div>
 	);
