@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import QRCode from 'react-qr-code';
 import {
 	Button,
 	Heading,
@@ -11,19 +10,15 @@ import {
 	Td,
 	useClipboard,
 	useToast,
-	HStack,
-	IconButton,
-	Text,
-	Image,
 	useMediaQuery,
+	VStack,
 } from '@chakra-ui/react';
 
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
-import { CopyIcon } from '@chakra-ui/icons';
-
 import DonationPedestal from '../components/DonationPedestal';
+import DonationEntry from '../components/DonationEntry';
 
 interface Donator {
 	addr: string;
@@ -55,6 +50,18 @@ const DonatePage = () => {
 		{
 			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
 			amount: 20,
+		},
+		{
+			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
+			amount: 1,
+		},
+		{
+			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
+			amount: 1,
+		},
+		{
+			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
+			amount: 1,
 		},
 		{
 			addr: 'ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu',
@@ -129,77 +136,78 @@ const DonatePage = () => {
 		>
 			<Heading
 				m="20px"
-				fontFamily="Aleo, serif"
-				size={isMobile ? '2xl' : '3xl'}
+				fontFamily="SF Mono"
+				fontSize={isMobile ? '3xl' : '5xl'}
 				color="white"
 			>
 				Hall of Donators
 			</Heading>
-			<HStack>
+			{/* <HStack>
 				<Image boxSize="150px" src="/monke.svg" />
 				<QRCode
 					size={128}
 					value="ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu"
 				/>
-			</HStack>
-			<HStack mt="10px">
-				{!isMobile && (
-					<Button
-						mr="-8px"
-						color="#CBC3E3"
-						_hover={{ backgroundColor: '#878787' }}
-						variant="ghost"
-						onClick={onCopy}
-						fontSize="lg"
-					>
-						<Text color="#E4C703">ban_</Text>
-						1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu
-					</Button>
-				)}
-
-				<IconButton
-					colorScheme="linkedin"
-					aria-label="copy"
-					icon={<CopyIcon />}
-					onClick={onCopy}
-				/>
-			</HStack>
-
-			<DonationPedestal donators={donators} />
-
-			<SimpleBar
-				style={{
-					maxWidth: isMobile ? '100vw' : '40vw',
-					minWidth: isMobile ? '100vw' : '40vw',
-					minHeight: '23vh',
-					maxHeight: '23vh',
-					overflowX: 'hidden',
-					display: 'flex',
-					alignItems: 'center',
-				}}
+			</HStack> */}
+			<Button
+				mr="-8px"
+				colorScheme="blue"
+				variant="solid"
+				onClick={onCopy}
+				fontSize="lg"
+				m="10px"
+				mt="1px"
 			>
-				<Table
-					m="15px"
-					size={isMobile ? 'sm' : 'md'}
-					variant="simple"
-					colorScheme="linkedin"
+				Donate
+			</Button>
+
+			{!isMobile && <DonationPedestal donators={donators} />}
+
+			{!isMobile ? (
+				<SimpleBar
+					style={{
+						maxWidth: isMobile ? '100vw' : '40vw',
+						minWidth: isMobile ? '100vw' : '40vw',
+						minHeight: '38vh',
+						maxHeight: '38vh',
+						overflowX: 'hidden',
+						display: 'flex',
+						alignItems: 'center',
+					}}
 				>
-					<Thead>
-						<Tr>
-							<Th>Address</Th>
-							<Th isNumeric>Amount</Th>
-						</Tr>
-					</Thead>
-					<Tbody>
-						{donators.map((donation, index) => (
+					<Table
+						m="15px"
+						size={isMobile ? 'sm' : 'md'}
+						variant="simple"
+						colorScheme="linkedin"
+					>
+						<Thead>
 							<Tr>
-								<Td color={GetColor(index)}>{donation.addr}</Td>
-								<Td isNumeric>{Math.round(donation.amount * 100) / 100}</Td>
+								<Th>Address</Th>
+								<Th isNumeric>Amount</Th>
 							</Tr>
-						))}
-					</Tbody>
-				</Table>
-			</SimpleBar>
+						</Thead>
+						<Tbody>
+							{donators.map((donation, index) => (
+								<Tr>
+									<Td color={GetColor(index)}>{donation.addr}</Td>
+									<Td isNumeric>{Math.round(donation.amount * 100) / 100}</Td>
+								</Tr>
+							))}
+						</Tbody>
+					</Table>
+				</SimpleBar>
+			) : (
+				<VStack maxHeight="75vh" minHeight="75vh" overflowY="scroll" mb="5px">
+					{donators.map((donation, index) => (
+						<DonationEntry
+							address={donation.addr}
+							amount={donation.amount}
+							ind={index}
+						/>
+					))}
+				</VStack>
+			)}
 		</div>
 	);
 };

@@ -11,6 +11,9 @@ import {
 	StatGroup,
 	Box,
 	useMediaQuery,
+	Button,
+	HStack,
+	Link,
 } from '@chakra-ui/react';
 
 import {
@@ -167,12 +170,32 @@ const StatsPage = () => {
 				color: 'white',
 			}}
 		>
-			<Heading size="2xl" color="#e4c703" mt="5vh" fontFamily="SF Mono">
+			<Heading size="2xl" color="#e4c703" mt="4vh" fontFamily="SF Mono">
 				BanBucket Stats
 			</Heading>
 			<Text fontFamily="SF Mono">
 				Last Updated: <span style={{ color: '#80DAE0' }}>{lastUpdated}</span>
 			</Text>
+			<HStack mt="10px" fontFamily="SF Mono">
+				<Link
+					href="https://creeper.banano.cc/explorer/account/ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu/history"
+					target="_blank"
+					_hover={{ textDecoration: 'none' }}
+				>
+					<Button m="5px" colorScheme="yellow">
+						Creeper
+					</Button>
+				</Link>
+				<Link
+					href="https://www.yellowspyglass.com/account/ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu"
+					target="_blank"
+					_hover={{ textDecoration: 'none' }}
+				>
+					<Button colorScheme="yellow">
+						<Text>YellowSpyGlass</Text>
+					</Button>
+				</Link>
+			</HStack>
 			<Box m="20px" d="flex" flexDir="column" minW="100vw" alignItems="center">
 				<StatGroup minW="350px" maxW="350px">
 					<StatWrapper
@@ -235,8 +258,8 @@ const StatsPage = () => {
 				alignItems="center"
 			>
 				<LineChart
-					width={isMobile ? 350 : 660}
-					height={isMobile ? 200 : 400}
+					width={isMobile ? 360 : 660}
+					height={isMobile ? 300 : 400}
 					data={graphData}
 				>
 					<Line type="monotone" dataKey="claims" />
