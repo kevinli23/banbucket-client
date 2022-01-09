@@ -13,7 +13,7 @@ const Banner = () => {
 		>
 			<AlertIcon />
 			<Text>
-				Banbucket is seeking a sponsor. If you would like to advertise, please reach
+				BanBucket is seeking a sponsor. If you would like to advertise, please reach
 				out on{' '}
 				<Link
 					href="https://www.reddit.com/user/campuspizza"
