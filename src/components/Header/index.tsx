@@ -93,7 +93,7 @@ const Header = ({ amount }: HeaderProps) => {
 					textDecoration: 'none',
 				}}
 			>
-				<Button colorScheme="blue" minWidth="300px" mb="5px">
+				<Button colorScheme="blue" minWidth="300px" minHeight="50px" mb="5px">
 					Feeless XNO/BAN Swap with NanSwap
 				</Button>
 			</Link>

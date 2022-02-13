@@ -30,9 +30,9 @@ const ClaimPage = () => {
 				alignItems="center"
 				flexDir="column"
 			>
-				<Button colorScheme="blue" mb="10px" fontSize="xl" onClick={onOpen}>
+				{/* <Button colorScheme="blue" mb="10px" fontSize="xl" onClick={onOpen}>
 					Donate to BanBucket
-				</Button>
+				</Button> */}
 				<Text color="white" fontSize="xs">
 					This site is protected by{' '}
 					<span style={{ color: '#00A7BF' }}>hCaptcha</span> and its
