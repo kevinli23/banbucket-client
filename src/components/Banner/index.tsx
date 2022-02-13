@@ -13,20 +13,15 @@ const Banner = () => {
 		>
 			<AlertIcon />
 			<Text>
-				BanBucket is seeking a sponsor. If you would like to advertise, please reach
-				out on{' '}
+				If you are looking for a quick way to swap XNO/BAN check out{' '}
 				<Link
-					href="https://www.reddit.com/user/campuspizza"
+					href="https://nanswap.com/?ref=banbucket"
 					target="_blank"
 					color="#CC5500"
 				>
-					reddit
+					NanSwap
 				</Link>{' '}
-				or by{' '}
-				<Link href="mailto:aiglette_carbone@aleeas.com" color="#CC5500">
-					{' '}
-					email
-				</Link>
+				and use my link to support BanBucket!
 			</Text>
 		</Alert>
 	);
