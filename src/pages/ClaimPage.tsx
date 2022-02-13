@@ -1,14 +1,14 @@
 import React from 'react';
 import ClaimBox from '../components/ClaimBox';
 
-import { Text, useDisclosure, Button, Box } from '@chakra-ui/react';
+import { Text, Box } from '@chakra-ui/react';
 
-import DonationModal from '../components/DonationModal';
+// import DonationModal from '../components/DonationModal';
 
-import Banner from '../components/Banner';
+// import Banner from '../components/Banner';
 
 const ClaimPage = () => {
-	const { isOpen, onOpen, onClose } = useDisclosure();
+	// const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
 		<Box
@@ -58,7 +58,7 @@ const ClaimPage = () => {
 					</Text>
 				</Text>
 			</Box>
-			<DonationModal isOpen={isOpen} onClose={onClose} />
+			{/* <DonationModal isOpen={isOpen} onClose={onClose} /> */}
 		</Box>
 	);
 };
