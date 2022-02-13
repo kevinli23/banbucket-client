@@ -20,7 +20,7 @@ const ClaimPage = () => {
 			alignItems="center"
 			justifyContent="center"
 		>
-			<Banner />
+			{/* <Banner /> */}
 			<ClaimBox />
 			<Box
 				justifySelf="flex-end"

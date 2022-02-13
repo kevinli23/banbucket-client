@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Heading, Text } from '@chakra-ui/react';
+import { Heading, Text, Button, Link } from '@chakra-ui/react';
 
 import { ReactComponent as BanIcon } from '../../banicon.svg';
 import PriceBox from '../PriceBox';
@@ -86,6 +86,17 @@ const Header = ({ amount }: HeaderProps) => {
 				</div>
 				<PriceBox />
 			</div>
+			<Link
+				href="https://nanswap.com/swap/XNO/BAN?ref=banbucket"
+				target="_blank"
+				_hover={{
+					textDecoration: 'none',
+				}}
+			>
+				<Button colorScheme="blue" minWidth="300px" mb="5px">
+					Feeless XNO/BAN Swap with NanSwap
+				</Button>
+			</Link>
 		</>
 	);
 };
