@@ -15,7 +15,7 @@ const Banner = () => {
 			<Text>
 				If you are looking for a quick way to swap XNO/BAN check out{' '}
 				<Link
-					href="https://nanswap.com/?ref=banbucket"
+					href="https://nanswap.com/swap/XNO/BAN?ref=banbucket"
 					target="_blank"
 					color="#CC5500"
 				>
