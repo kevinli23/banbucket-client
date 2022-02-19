@@ -81,7 +81,6 @@ const TransactionCard = (props: TransactionProps) => {
 const HistoryPage = () => {
 	const [transactions, setTransactions] = useState<Array<TransactionProps>>([]);
 	const [donations, setDonations] = useState<Array<TransactionProps>>([]);
-	const [error, setError] = useState<String>('');
 
 	useEffect(() => {
 		(async () => {
@@ -95,8 +94,7 @@ const HistoryPage = () => {
 					const json = await res.json();
 					setTransactions(json);
 				})
-				.catch((err) => {
-					setError('Failed to load transactions' + err);
+				.catch((_err) => {
 					return;
 				});
 
@@ -110,8 +108,7 @@ const HistoryPage = () => {
 					const json = await res.json();
 					setDonations(json);
 				})
-				.catch((err) => {
-					setError('Failed to load donations' + err);
+				.catch((_err) => {
 					return;
 				});
 		})();
