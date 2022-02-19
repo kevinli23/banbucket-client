@@ -15,3 +15,11 @@ export interface StatItemProps {
 	type: 'increase' | 'decrease';
 	percent: any;
 }
+
+export interface TransactionProps {
+	hash: string;
+	address: string;
+	date: string;
+	amount: number;
+	type: string;
+}

@@ -22,10 +22,12 @@ const Footer = () => {
 		>
 			<FooterLink route="/" text="Faucet" />
 			<FooterDot />
-			<FooterLink route="/donate" text="Donate" />
+			<FooterLink route="/transactions" text="Transactions" />
+			<FooterDot />
+			{/* <FooterLink route="/donate" text="Donate" />
 			<FooterDot />
 			<FooterLink route="/updates" text="Updates" />
-			<FooterDot />
+			<FooterDot /> */}
 			<FooterLink route="/stats" text="Stats" />
 		</div>
 	);

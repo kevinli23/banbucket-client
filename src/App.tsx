@@ -3,6 +3,7 @@ import DonatePage from './pages/DonatePage';
 import ClaimPage from './pages/ClaimPage';
 import UpdatePage from './pages/UpdatePage';
 import StatsPage from './pages/StatsPage';
+import HistoryPage from './pages/HistoryPage';
 import Footer from './components/Footer';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -14,6 +15,9 @@ function App() {
 				<Switch>
 					<Route path="/donate">
 						<DonatePage />
+					</Route>
+					<Route path="/transactions">
+						<HistoryPage />
 					</Route>
 					<Route path="/updates">
 						<UpdatePage />
