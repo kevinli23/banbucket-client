@@ -101,6 +101,7 @@ const ClaimBox = () => {
 				}}
 			>
 				<Input
+					id="faddr"
 					mb="10px"
 					value={addr}
 					onChange={handleChange}
