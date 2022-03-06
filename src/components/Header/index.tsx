@@ -97,17 +97,17 @@ const Header = ({ amount }: HeaderProps) => {
 					Feeless XNO/BAN Swap @ NanSwap
 				</Button>
 			</Link>
-			{/* <Link
-				href="https://banfaucet.com/?r=14"
+			<Link
+				href="https://banbucket.ninja/earn"
 				target="_blank"
 				_hover={{
 					textDecoration: 'none',
 				}}
 			>
-				<Button colorScheme="blue" minWidth="300px" minHeight="50px" mb="5px">
-					Earn more Free Banano @ BanFaucet
+				<Button colorScheme="green" minWidth="300px" minHeight="50px" mb="5px">
+					Earn more Free Banano/Crypto
 				</Button>
-			</Link> */}
+			</Link>
 		</>
 	);
 };

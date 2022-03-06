@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import {
-	RefFaucets,
-	OtherFaucets,
-	OtherFaucetCryptoTypes,
-} from '../constants/info';
-
-import { RefFaucetType } from '../types/banbucket-types';
+import { RefFaucets, OtherFaucets } from '../constants/info';
 
 import {
 	Heading,
@@ -19,7 +13,6 @@ import {
 	Image,
 	Badge,
 	Link,
-	textDecoration,
 } from '@chakra-ui/react';
 
 interface RefFaucetBoxProps {
