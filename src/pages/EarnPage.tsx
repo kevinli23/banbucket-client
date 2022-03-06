@@ -80,8 +80,23 @@ const RefFaucetBox = (props: RefFaucetBoxProps) => {
 				m="3"
 				_hover={{ backgroundColor: '#3c4142' }}
 			>
-				<Box p="6">
-					<Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated>
+				<Box p="4">
+					<Box
+						mt="1"
+						fontWeight="semibold"
+						as="h4"
+						lineHeight="tight"
+						isTruncated
+						display="flex"
+						flexDirection="row"
+						alignItems="center"
+					>
+						<Image
+							src={`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${props.link}/&size=32`}
+							boxSize="25px"
+							mr="3"
+							mb="1"
+						/>
 						{props.name}
 					</Box>
 					<Box display="flex" alignItems="baseline">
@@ -121,7 +136,22 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 				_hover={{ backgroundColor: '#3c4142' }}
 			>
 				<Box p="4">
-					<Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated>
+					<Box
+						mt="1"
+						fontWeight="semibold"
+						as="h4"
+						lineHeight="tight"
+						isTruncated
+						display="flex"
+						flexDirection="row"
+						alignItems="center"
+					>
+						<Image
+							src={`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${props.link}/&size=32`}
+							boxSize="25px"
+							mr="3"
+							mb="1"
+						/>
 						{props.name}
 					</Box>
 					<Box display="flex" alignItems="baseline">
