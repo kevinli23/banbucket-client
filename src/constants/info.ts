@@ -41,7 +41,7 @@ export const OtherFaucets = [
     captcha: true,
   },
   {
-    name: "Prussia's Faucet",
+    name: "Prussia",
     link: "https://faucet.prussia.dev/",
     type: "Banano",
     ads: false,
@@ -77,7 +77,7 @@ export const OtherFaucets = [
     captcha: true,
   },
   {
-    name: "Algodrops",
+    name: "Algo Drops",
     link: "https://algodrops.org/faucet",
     type: "Algorand",
     ads: false,
@@ -86,7 +86,7 @@ export const OtherFaucets = [
     captcha: true,
   },
   {
-    name: "AlgoForMe",
+    name: "Algo For Me",
     link: "https://algofor.me/faucet",
     type: "Algorand",
     ads: false,
@@ -95,7 +95,7 @@ export const OtherFaucets = [
     captcha: true,
   },
   {
-    name: "The Algo Faucet",
+    name: "The Algo",
     link: "https://thealgofaucet.com/",
     type: "Algorand",
     ads: false,
@@ -113,7 +113,7 @@ export const OtherFaucets = [
     captcha: true,
   },
   {
-    name: "Free Nyano Faucet",
+    name: "Free Nyano",
     link: "https://freenyanofaucet.com/nfaucet",
     type: "Nano",
     ads: false,
@@ -131,7 +131,7 @@ export const OtherFaucets = [
     captcha: false,
   },
   {
-    name: "K3I Faucet",
+    name: "K3I",
     link: "https://nanofaucet.online/",
     type: "Nano",
     ads: true,

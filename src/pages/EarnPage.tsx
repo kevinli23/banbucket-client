@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { RefFaucets, OtherFaucets } from '../constants/info';
+import { ExternalLinkIcon, CheckIcon } from '@chakra-ui/icons';
 
 import {
 	Heading,
@@ -13,7 +14,10 @@ import {
 	Image,
 	Badge,
 	Link,
+	IconButton,
+	Text,
 } from '@chakra-ui/react';
+import useLocalStorage from '../hooks/localstorage';
 
 interface RefFaucetBoxProps {
 	name: string;
@@ -66,112 +70,202 @@ const GetIcon = (type: string): string => {
 
 const RefFaucetBox = (props: RefFaucetBoxProps) => {
 	return (
-		<Link
-			href={props.link}
-			target="_blank"
-			_hover={{ textDecoration: 'none', backgroundColor: 'white' }}
+		<Box
+			id={props.name}
+			maxW="sm"
+			borderWidth="1px"
+			borderRadius="lg"
+			overflow="hidden"
+			m="3"
 		>
-			<Box
-				id={props.name}
-				maxW="sm"
-				borderWidth="1px"
-				borderRadius="lg"
-				overflow="hidden"
-				m="3"
-				_hover={{ backgroundColor: '#3c4142' }}
-			>
-				<Box p="4">
-					<Box
-						mt="1"
-						fontWeight="semibold"
-						as="h4"
-						lineHeight="tight"
-						isTruncated
-						display="flex"
-						flexDirection="row"
-						alignItems="center"
+			<Box p="4">
+				<Box
+					mt="1"
+					fontWeight="semibold"
+					as="h4"
+					lineHeight="tight"
+					isTruncated
+					display="flex"
+					flexDirection="row"
+					alignItems="center"
+				>
+					<Image
+						src={`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${props.link}/&size=32`}
+						boxSize="25px"
+						mr="3"
+						mb="1"
+					/>
+					{props.name}
+					<Link
+						href={props.link}
+						target="_blank"
+						_hover={{ textDecoration: 'none' }}
+						marginLeft="auto"
+						alignSelf="flex-end"
 					>
-						<Image
-							src={`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${props.link}/&size=32`}
-							boxSize="25px"
-							mr="3"
-							mb="1"
+						<IconButton
+							colorScheme="purple"
+							aria-label="Call Segun"
+							size="sm"
+							icon={<ExternalLinkIcon />}
 						/>
-						{props.name}
-					</Box>
-					<Box display="flex" alignItems="baseline">
-						{props.tags.map((tag) => (
-							<Badge
-								id={tag}
-								borderRadius="full"
-								px="2"
-								m="1"
-								ml="0"
-								colorScheme={GetColorScheme(tag)}
-							>
-								{tag}
-							</Badge>
-						))}
-					</Box>
+					</Link>
+				</Box>
+				<Box display="flex" alignItems="baseline">
+					{props.tags.map((tag) => (
+						<Badge
+							id={tag}
+							borderRadius="full"
+							px="2"
+							m="1"
+							ml="0"
+							colorScheme={GetColorScheme(tag)}
+						>
+							{tag}
+						</Badge>
+					))}
 				</Box>
 			</Box>
-		</Link>
+		</Box>
 	);
 };
 
 const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
+	const [nextClaim, setNextClaim] = useState('Ready');
+	const [lastClaim, setLastClaim] = useLocalStorage(props.name, 0);
+	const [currentTime, setCurrentTime] = useState(Date.now());
+
+	useEffect(() => {
+		setInterval(() => {
+			setCurrentTime(Date.now());
+		}, 1000);
+	}, []);
+
+	useEffect(() => {
+		if (lastClaim >= 0) {
+			let nextClaimDate = new Date(lastClaim);
+
+			if (props.rt === '15 Hours') {
+				nextClaimDate.setHours(nextClaimDate.getHours() + 15);
+			} else if (props.rt === '1 Day') {
+				nextClaimDate.setDate(nextClaimDate.getDate() + 1);
+			} else if (props.rt === '2 Days') {
+				nextClaimDate.setDate(nextClaimDate.getDate() + 2);
+			} else if (props.rt === '5 Minutes') {
+				nextClaimDate.setMinutes(nextClaimDate.getMinutes() + 5);
+			} else if (props.rt === '30 Minutes') {
+				nextClaimDate.setMinutes(nextClaimDate.getMinutes() + 30);
+			} else if (props.rt === '10 Minutes') {
+				nextClaimDate.setMinutes(nextClaimDate.getMinutes() + 10);
+			} else if (props.rt === '00:00 UTC') {
+				nextClaimDate = new Date(
+					Date.UTC(
+						nextClaimDate.getUTCFullYear(),
+						nextClaimDate.getUTCMonth(),
+						nextClaimDate.getDate() + 1,
+						0,
+						0,
+						0,
+						0
+					)
+				);
+			}
+
+			const diff = nextClaimDate.getTime() - currentTime;
+
+			if (diff <= 0) {
+				setNextClaim('Ready');
+			} else {
+				let hour_rounded = Math.floor(diff / 3600000);
+
+				const minutes = (diff / 3600000 - hour_rounded) * 60;
+				let minutes_rounded = Math.floor(minutes);
+
+				let seconds_rounded = Math.floor((minutes - minutes_rounded) * 60);
+
+				setNextClaim(`${hour_rounded}h ${minutes_rounded}m ${seconds_rounded}s`);
+			}
+		}
+	}, [currentTime, lastClaim, props.rt]);
+
 	return (
-		<Link
-			href={props.link}
-			target="_blank"
-			_hover={{ textDecoration: 'none', backgroundColor: 'white' }}
+		<Box
+			id={props.name}
+			maxW="sm"
+			borderWidth="1px"
+			borderRadius="lg"
+			overflow="hidden"
+			m="2"
+			_hover={{ backgroundColor: '#3c4142' }}
 		>
-			<Box
-				id={props.name}
-				maxW="sm"
-				borderWidth="1px"
-				borderRadius="lg"
-				overflow="hidden"
-				m="2"
-				_hover={{ backgroundColor: '#3c4142' }}
-			>
-				<Box p="4">
-					<Box
-						mt="1"
-						fontWeight="semibold"
-						as="h4"
-						lineHeight="tight"
-						isTruncated
-						display="flex"
-						flexDirection="row"
-						alignItems="center"
+			<Box p="4">
+				<Box
+					mt="1"
+					fontWeight="semibold"
+					as="h4"
+					lineHeight="tight"
+					isTruncated
+					display="flex"
+					flexDirection="row"
+					alignItems="center"
+				>
+					<Image
+						src={`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${props.link}/&size=32`}
+						boxSize="25px"
+						mr="3"
+						mb="1"
+					/>
+					{props.name}
+					<Text
+						fontSize="xs"
+						color={nextClaim === 'Ready' ? 'green.200' : 'red.200'}
+						alignSelf="flex-end"
+						marginLeft="auto"
 					>
-						<Image
-							src={`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${props.link}/&size=32`}
-							boxSize="25px"
-							mr="3"
-							mb="1"
-						/>
-						{props.name}
-					</Box>
-					<Box display="flex" alignItems="baseline">
-						<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="green">
-							{props.rt}
+						{nextClaim}
+					</Text>
+				</Box>
+				<Box display="flex" alignItems="baseline">
+					<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="green">
+						{props.rt}
+					</Badge>
+					{props.ads && (
+						<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="red">
+							ADS
 						</Badge>
-						{props.ads && (
-							<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="red">
-								ADS
-							</Badge>
-						)}
-						{props.captcha && (
-							<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="red">
-								Captcha
-							</Badge>
-						)}
-					</Box>
+					)}
+					{props.captcha && (
+						<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="red">
+							Captcha
+						</Badge>
+					)}
+				</Box>
+				<Box display="flex" flexDir="row" justifyContent="flex-start">
+					<Link
+						href={props.link}
+						target="_blank"
+						_hover={{ textDecoration: 'none' }}
+						marginLeft="auto"
+						alignSelf="flex-end"
+					>
+						<IconButton
+							colorScheme="purple"
+							aria-label="verify"
+							size="sm"
+							icon={<ExternalLinkIcon />}
+						/>
+					</Link>
+					<IconButton
+						ml="2"
+						colorScheme="green"
+						aria-label="check"
+						size="sm"
+						icon={<CheckIcon />}
+						onClick={() => setLastClaim(Date.now())}
+					/>
 				</Box>
 			</Box>
-		</Link>
+		</Box>
 	);
 };
 
