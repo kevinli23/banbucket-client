@@ -4,6 +4,7 @@ import ClaimPage from './pages/ClaimPage';
 import UpdatePage from './pages/UpdatePage';
 import StatsPage from './pages/StatsPage';
 import HistoryPage from './pages/HistoryPage';
+import EarnPage from './pages/EarnPage';
 import Footer from './components/Footer';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -24,6 +25,9 @@ function App() {
 					</Route>
 					<Route path="/stats">
 						<StatsPage />
+					</Route>
+					<Route path="/earn">
+						<EarnPage />
 					</Route>
 					<Route path="/">
 						<ClaimPage />

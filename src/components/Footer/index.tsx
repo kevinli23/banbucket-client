@@ -22,6 +22,8 @@ const Footer = () => {
 		>
 			<FooterLink route="/" text="Faucet" />
 			<FooterDot />
+			<FooterLink route="/earn" text="More Crypto" />
+			<FooterDot />
 			<FooterLink route="/transactions" text="Transactions" />
 			<FooterDot />
 			{/* <FooterLink route="/donate" text="Donate" />

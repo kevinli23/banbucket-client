@@ -23,3 +23,10 @@ export interface TransactionProps {
 	amount: number;
 	type: string;
 }
+
+export interface RefFaucetType {
+	name: string;
+	type: string;
+	link: string;
+	ads: boolean;
+}
