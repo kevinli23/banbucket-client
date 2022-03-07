@@ -7,7 +7,7 @@ import HistoryPage from './pages/HistoryPage';
 import EarnPage from './pages/EarnPage';
 import Footer from './components/Footer';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
 	return (
