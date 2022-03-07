@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { RefFaucets, OtherFaucets } from '../constants/info';
 import { ExternalLinkIcon, CheckIcon, BellIcon } from '@chakra-ui/icons';
@@ -47,7 +47,7 @@ const GetColorScheme = (word: string): string => {
 	} else if (word === 'BTC') {
 		return 'orange';
 	} else if (word === 'Solana') {
-		return 'pink';
+		return 'purple';
 	} else if (word === 'Nano') {
 		return 'blue';
 	}
@@ -137,6 +137,28 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 	const [currentTime, setCurrentTime] = useState(Date.now());
 	const [int, setInt] = useState<number>(-1);
 
+	const showNotification = useCallback(
+		(faucet: string) => {
+			if (props.notificationsEnabled) {
+				var options = {
+					body: `${faucet} Faucet is now ready to claim`,
+					icon: 'https://www.banbucket.ninja/logo256.ico',
+				};
+
+				const notification = new Notification(`BanBucket`, options);
+
+				setTimeout(() => {
+					notification.close();
+				}, 5 * 1000);
+
+				notification.addEventListener('click', () => {
+					window.open('https://www.banbucket.ninja/earn', '_blank');
+				});
+			}
+		},
+		[props.notificationsEnabled]
+	);
+
 	useEffect(() => {
 		var i = window.setInterval(() => {
 			setCurrentTime(Date.now());
@@ -173,14 +195,18 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 						0
 					)
 				);
+			} else if (props.rt === '1 Week') {
+				nextClaimDate.setDate(nextClaimDate.getDate() + 7);
 			}
 
 			const diff = nextClaimDate.getTime() - currentTime;
 
 			if (diff <= 0) {
 				window.clearInterval(int);
-				showNotification(props.name);
 				setNextClaim('Ready');
+				if (diff >= -2000 && nextClaim !== 'Ready') {
+					showNotification(props.name);
+				}
 			} else {
 				let hour_rounded = Math.floor(diff / 3600000);
 
@@ -192,26 +218,15 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 				setNextClaim(`${hour_rounded}h ${minutes_rounded}m ${seconds_rounded}s`);
 			}
 		}
-	}, [currentTime, lastClaim, props.rt, props.name]);
-
-	function showNotification(faucet: string) {
-		if (props.notificationsEnabled) {
-			var options = {
-				body: `${faucet} is now ready to claim`,
-				icon: 'https://www.banbucket.ninja/logo256.ico',
-			};
-
-			const notification = new Notification(`BanBucket`, options);
-
-			setTimeout(() => {
-				notification.close();
-			}, 10 * 1000);
-
-			notification.addEventListener('click', () => {
-				window.open('banbucket.ninja/earn', '_blank');
-			});
-		}
-	}
+	}, [
+		currentTime,
+		lastClaim,
+		props.rt,
+		props.name,
+		int,
+		showNotification,
+		nextClaim,
+	]);
 
 	return (
 		<Box
@@ -342,8 +357,8 @@ const EarnPage = () => {
 				allowMultiple
 				defaultIndex={[0]}
 				allowToggle
-				maxW="325px"
-				minW="325px"
+				maxW="350px"
+				minW="350px"
 				margin="10px"
 			>
 				<AccordionItem border="none">
