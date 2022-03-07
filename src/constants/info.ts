@@ -3,7 +3,7 @@ export const RefFaucets = [
     name: "BanFaucet",
     link: "https://banfaucet.com/?r=14",
     type: "Refferal",
-    tags: ["ads", "Banano", "Doge"],
+    tags: ["Banano", "Doge"],
   },
   {
     name: "Faucet Crypto",
