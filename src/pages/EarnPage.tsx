@@ -66,6 +66,8 @@ const GetIcon = (type: string): string => {
 		return '/nanoicon.png';
 	} else if (type === 'Algorand') {
 		return '/algoicon.png';
+	} else if (type === "Moon") {
+		return "/moonicon.png"
 	}
 
 	return '/reficon.png';
@@ -406,7 +408,7 @@ const EarnPage = () => {
 					</AccordionPanel>
 				</AccordionItem>
 
-				{['Banano', 'Nano', 'Solana', 'Algorand'].map((t, i) => (
+				{['Banano', 'Nano', 'Solana', 'Algorand', 'Moon'].map((t, i) => (
 					<AccordionItem border="none" id={t}>
 						<h2>
 							<AccordionButton

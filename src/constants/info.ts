@@ -220,7 +220,15 @@ export const OtherFaucets = [
     health: 100,
     captcha: true,
   },
-
+  {
+    name: "Prussia (M)",
+    link: "https://www.moonfaucet.cc/",
+    type: "Moon",
+    ads: false,
+    rt: "1 Day",
+    health: 100,
+    captcha: true,
+  }
   // {
   //   name: "Faucet Queen",
   //   link: "https://faucetqueen.repl.co/",
