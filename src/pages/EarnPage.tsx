@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { RefFaucets, OtherFaucets } from '../constants/info';
-import { ExternalLinkIcon, CheckIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon, CheckIcon, BellIcon } from '@chakra-ui/icons';
 
 import {
 	Heading,
@@ -34,6 +34,7 @@ interface OtherFaucetBoxProps {
 	rt: string;
 	health: number;
 	captcha: boolean;
+	notificationsEnabled: boolean;
 }
 
 const GetColorScheme = (word: string): string => {
@@ -134,12 +135,15 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 	const [nextClaim, setNextClaim] = useState('Ready');
 	const [lastClaim, setLastClaim] = useLocalStorage(props.name, 0);
 	const [currentTime, setCurrentTime] = useState(Date.now());
+	const [int, setInt] = useState<number>(-1);
 
 	useEffect(() => {
-		setInterval(() => {
+		var i = window.setInterval(() => {
 			setCurrentTime(Date.now());
 		}, 1000);
-	}, []);
+
+		setInt(i);
+	}, [lastClaim]);
 
 	useEffect(() => {
 		if (lastClaim >= 0) {
@@ -174,6 +178,8 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 			const diff = nextClaimDate.getTime() - currentTime;
 
 			if (diff <= 0) {
+				window.clearInterval(int);
+				showNotification(props.name);
 				setNextClaim('Ready');
 			} else {
 				let hour_rounded = Math.floor(diff / 3600000);
@@ -186,7 +192,26 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 				setNextClaim(`${hour_rounded}h ${minutes_rounded}m ${seconds_rounded}s`);
 			}
 		}
-	}, [currentTime, lastClaim, props.rt]);
+	}, [currentTime, lastClaim, props.rt, props.name]);
+
+	function showNotification(faucet: string) {
+		if (props.notificationsEnabled) {
+			var options = {
+				body: `${faucet} is now ready to claim`,
+				icon: 'https://www.banbucket.ninja/logo256.ico',
+			};
+
+			const notification = new Notification(`BanBucket`, options);
+
+			setTimeout(() => {
+				notification.close();
+			}, 10 * 1000);
+
+			notification.addEventListener('click', () => {
+				window.open('banbucket.ninja/earn', '_blank');
+			});
+		}
+	}
 
 	return (
 		<Box
@@ -271,6 +296,20 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 
 const EarnPage = () => {
 	const refFaucets = RefFaucets;
+	const [notificationsEnabled, setNotificationsEnabled] = useLocalStorage(
+		'notifs',
+		Notification.permission === 'granted'
+	);
+
+	useEffect(() => {
+		if (notificationsEnabled && Notification.permission !== 'granted') {
+			if (!('Notification' in window)) {
+				console.log('This browser does not support desktop notification');
+			} else {
+				Notification.requestPermission();
+			}
+		}
+	}, [notificationsEnabled]);
 
 	return (
 		<div
@@ -291,6 +330,14 @@ const EarnPage = () => {
 			<Heading mt="10px" size="2xl" fontFamily="SF Mono" color="#E4C703">
 				Earn More Crypto
 			</Heading>
+			<IconButton
+				mt="2"
+				colorScheme={notificationsEnabled ? 'green' : 'red'}
+				aria-label="notifications"
+				size="md"
+				icon={<BellIcon />}
+				onClick={() => setNotificationsEnabled(!notificationsEnabled)}
+			/>
 			<Accordion
 				allowMultiple
 				defaultIndex={[0]}
@@ -329,7 +376,7 @@ const EarnPage = () => {
 						</h2>
 						<AccordionPanel pb={4}>
 							{OtherFaucets.filter((x) => x.type === t).map((r) => (
-								<OtherFaucetBox {...r} />
+								<OtherFaucetBox notificationsEnabled {...r} />
 							))}
 						</AccordionPanel>
 					</AccordionItem>
