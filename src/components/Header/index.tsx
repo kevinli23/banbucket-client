@@ -98,7 +98,7 @@ const Header = ({ amount }: HeaderProps) => {
 				</Button>
 			</Link>
 			<Link
-				href="https://banbucket.ninja/earn"
+				href="https://banbucket.ninja/#/earn"
 				_hover={{
 					textDecoration: 'none',
 				}}
