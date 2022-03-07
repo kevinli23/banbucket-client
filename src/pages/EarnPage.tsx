@@ -162,7 +162,7 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 					Date.UTC(
 						nextClaimDate.getUTCFullYear(),
 						nextClaimDate.getUTCMonth(),
-						nextClaimDate.getDate() + 1,
+						nextClaimDate.getUTCDate() + 1,
 						0,
 						0,
 						0,
