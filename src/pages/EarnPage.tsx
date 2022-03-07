@@ -80,6 +80,7 @@ const RefFaucetBox = (props: RefFaucetBoxProps) => {
 			borderRadius="lg"
 			overflow="hidden"
 			m="3"
+			key={props.name}
 		>
 			<Box p="4">
 				<Box
@@ -317,6 +318,14 @@ const EarnPage = () => {
 		'notifs',
 		Notification.permission === 'granted'
 	);
+	const [defaultIndex] = useLocalStorage('defaultIndex', [0]);
+
+	var indexSet: Set<number>;
+
+	useEffect(() => {
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		indexSet = new Set(defaultIndex);
+	}, [defaultIndex]);
 
 	useEffect(() => {
 		if (notificationsEnabled && Notification.permission !== 'granted') {
@@ -362,7 +371,7 @@ const EarnPage = () => {
 			/>
 			<Accordion
 				allowMultiple
-				defaultIndex={[0]}
+				defaultIndex={defaultIndex}
 				allowToggle
 				maxW="350px"
 				minW="350px"
@@ -370,7 +379,19 @@ const EarnPage = () => {
 			>
 				<AccordionItem border="none">
 					<h2>
-						<AccordionButton>
+						<AccordionButton
+							onClick={() => {
+								if (indexSet.has(0)) {
+									indexSet.delete(0);
+								} else {
+									indexSet.add(0);
+								}
+								localStorage.setItem(
+									'defaultIndex',
+									JSON.stringify(Array.from(indexSet))
+								);
+							}}
+						>
 							<Image src="/reficon.png" boxSize="30px" />
 							<Box flex="1" textAlign="left">
 								Referral Faucets
@@ -380,15 +401,27 @@ const EarnPage = () => {
 					</h2>
 					<AccordionPanel pb={4}>
 						{refFaucets.map((r) => (
-							<RefFaucetBox {...r} />
+							<RefFaucetBox key={r.name} {...r} />
 						))}
 					</AccordionPanel>
 				</AccordionItem>
 
-				{['Banano', 'Nano', 'Solana', 'Algorand'].map((t) => (
+				{['Banano', 'Nano', 'Solana', 'Algorand'].map((t, i) => (
 					<AccordionItem border="none" id={t}>
 						<h2>
-							<AccordionButton>
+							<AccordionButton
+								onClick={() => {
+									if (indexSet.has(i + 1)) {
+										indexSet.delete(i + 1);
+									} else {
+										indexSet.add(i + 1);
+									}
+									localStorage.setItem(
+										'defaultIndex',
+										JSON.stringify(Array.from(indexSet))
+									);
+								}}
+							>
 								<Image src={GetIcon(t)} mr="2" boxSize="30px" />
 								<Box flex="1" textAlign="left">
 									{t} Faucets
