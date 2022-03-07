@@ -3,6 +3,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { RefFaucets, OtherFaucets } from '../constants/info';
 import { ExternalLinkIcon, CheckIcon, BellIcon } from '@chakra-ui/icons';
 
+import ReactGA from 'react-ga';
+
 import {
 	Heading,
 	Box,
@@ -325,6 +327,11 @@ const EarnPage = () => {
 			}
 		}
 	}, [notificationsEnabled]);
+
+	useEffect(() => {
+		ReactGA.initialize('UA-205648108-1');
+		ReactGA.pageview(window.location.pathname + window.location.search);
+	}, []);
 
 	return (
 		<div
