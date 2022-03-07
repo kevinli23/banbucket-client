@@ -99,13 +99,12 @@ const Header = ({ amount }: HeaderProps) => {
 			</Link>
 			<Link
 				href="https://banbucket.ninja/earn"
-				target="_blank"
 				_hover={{
 					textDecoration: 'none',
 				}}
 			>
 				<Button colorScheme="green" minWidth="300px" minHeight="50px" mb="5px">
-					Earn more Free Banano/Crypto
+					Earn More Free Banano and Crypto
 				</Button>
 			</Link>
 		</>
