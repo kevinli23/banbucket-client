@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ClaimBox from '../components/ClaimBox';
 
 import { Text, Box } from '@chakra-ui/react';
+
+import ReactGA from 'react-ga';
 
 // import DonationModal from '../components/DonationModal';
 
@@ -9,6 +11,12 @@ import { Text, Box } from '@chakra-ui/react';
 
 const ClaimPage = () => {
 	// const { isOpen, onOpen, onClose } = useDisclosure();
+
+	useEffect(() => {
+		ReactGA.initialize('UA-205648108-1');
+		ReactGA.pageview(window.location.pathname + window.location.search);
+		console.log('potato');
+	}, []);
 
 	return (
 		<Box
