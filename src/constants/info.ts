@@ -16,6 +16,12 @@ export const RefFaucets = [
     link: "https://viefaucet.com?r=6224cc8194ae11262f793c32",
     type: "Refferal",
     tags: ["ads", "Solana", "Shiba", "BTC"],
+  },
+  {
+    name: "FaucetPay",
+    link: "https://faucetpay.io/?r=3295889",
+    type: "Refferal",
+    tags: ["ads", "Solana", "BTC", "ETH"],
   }
 ]
 
