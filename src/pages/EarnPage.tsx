@@ -66,8 +66,8 @@ const GetIcon = (type: string): string => {
 		return '/nanoicon.png';
 	} else if (type === 'Algorand') {
 		return '/algoicon.png';
-	} else if (type === "Moon") {
-		return "/moonicon.png"
+	} else if (type === 'Moon') {
+		return '/moonicon.png';
 	}
 
 	return '/reficon.png';
@@ -341,7 +341,7 @@ const EarnPage = () => {
 
 	useEffect(() => {
 		ReactGA.initialize('UA-205648108-1');
-		ReactGA.pageview(window.location.pathname + window.location.search);
+		ReactGA.pageview('/earn');
 	}, []);
 
 	return (
