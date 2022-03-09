@@ -18,6 +18,8 @@ import {
 	Link,
 	IconButton,
 	Text,
+	useMediaQuery,
+	Wrap,
 } from '@chakra-ui/react';
 import useLocalStorage from '../hooks/localstorage';
 
@@ -77,7 +79,8 @@ const RefFaucetBox = (props: RefFaucetBoxProps) => {
 	return (
 		<Box
 			id={props.name}
-			maxW="sm"
+			maxW="300px"
+			minW="300px"
 			borderWidth="1px"
 			borderRadius="lg"
 			overflow="hidden"
@@ -236,7 +239,8 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 	return (
 		<Box
 			id={props.name}
-			maxW="sm"
+			maxW="300px"
+			minW="300px"
 			borderWidth="1px"
 			borderRadius="lg"
 			overflow="hidden"
@@ -321,6 +325,7 @@ const EarnPage = () => {
 		Notification.permission === 'granted'
 	);
 	const [defaultIndex] = useLocalStorage('defaultIndex', [0]);
+	const [isMobile] = useMediaQuery('(max-width: 1024px)');
 
 	var indexSet: Set<number>;
 
@@ -375,17 +380,20 @@ const EarnPage = () => {
 				allowMultiple
 				defaultIndex={defaultIndex}
 				allowToggle
-				maxW="350px"
-				minW="350px"
+				maxW={isMobile ? '350px' : '640px'}
+				minW={isMobile ? '350px' : '640px'}
 				margin="10px"
 			>
 				<AccordionItem border="none">
 					<h2>
 						<AccordionButton
 							onClick={() => {
-								if (indexSet.has(0)) {
+								if (indexSet != null && indexSet.has(0)) {
 									indexSet.delete(0);
 								} else {
+									if (indexSet == null) {
+										indexSet = new Set(defaultIndex);
+									}
 									indexSet.add(0);
 								}
 								localStorage.setItem(
@@ -394,7 +402,7 @@ const EarnPage = () => {
 								);
 							}}
 						>
-							<Image src="/reficon.png" boxSize="30px" />
+							<Image src="/reficon.png" mr="2" boxSize="30px" />
 							<Box flex="1" textAlign="left">
 								Referral Faucets
 							</Box>
@@ -402,9 +410,11 @@ const EarnPage = () => {
 						</AccordionButton>
 					</h2>
 					<AccordionPanel pb={4}>
-						{refFaucets.map((r) => (
-							<RefFaucetBox key={r.name} {...r} />
-						))}
+						<Wrap>
+							{refFaucets.map((r) => (
+								<RefFaucetBox key={r.name} {...r} />
+							))}
+						</Wrap>
 					</AccordionPanel>
 				</AccordionItem>
 
@@ -432,9 +442,11 @@ const EarnPage = () => {
 							</AccordionButton>
 						</h2>
 						<AccordionPanel pb={4}>
-							{OtherFaucets.filter((x) => x.type === t).map((r) => (
-								<OtherFaucetBox notificationsEnabled {...r} />
-							))}
+							<Wrap>
+								{OtherFaucets.filter((x) => x.type === t).map((r) => (
+									<OtherFaucetBox notificationsEnabled {...r} />
+								))}
+							</Wrap>
 						</AccordionPanel>
 					</AccordionItem>
 				))}
