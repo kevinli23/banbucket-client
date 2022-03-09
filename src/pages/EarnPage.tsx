@@ -423,9 +423,12 @@ const EarnPage = () => {
 						<h2>
 							<AccordionButton
 								onClick={() => {
-									if (indexSet.has(i + 1)) {
+									if (indexSet != null && indexSet.has(i + 1)) {
 										indexSet.delete(i + 1);
 									} else {
+										if (indexSet == null) {
+											indexSet = new Set(defaultIndex);
+										}
 										indexSet.add(i + 1);
 									}
 									localStorage.setItem(
