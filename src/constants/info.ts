@@ -22,6 +22,12 @@ export const RefFaucets = [
     link: "https://faucetpay.io/?r=3295889",
     type: "Refferal",
     tags: ["ads", "Solana", "BTC", "ETH"],
+  },
+  {
+    name: "FreeSolana (FP)",
+    link: "https://freesolana.top/?r=47342",
+    type: "Refferal",
+    tags: ["ads", "Solana"]
   }
 ]
 
