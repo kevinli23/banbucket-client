@@ -240,6 +240,15 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: true,
+  },
+  {
+    name: "BananoPlanet",
+    link: "https://bananoplanet.cc/faucet",
+    type: "Banano",
+    ads: true,
+    rt: "2 Hours",
+    health: 100,
+    captcha: true,
   }
   // {
   //   name: "Faucet Queen",

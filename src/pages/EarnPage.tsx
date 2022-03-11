@@ -179,18 +179,24 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 		if (lastClaim >= 0) {
 			let nextClaimDate = new Date(lastClaim);
 
-			if (props.rt === '15 Hours') {
-				nextClaimDate.setHours(nextClaimDate.getHours() + 15);
-			} else if (props.rt === '1 Day') {
-				nextClaimDate.setDate(nextClaimDate.getDate() + 1);
-			} else if (props.rt === '2 Days') {
-				nextClaimDate.setDate(nextClaimDate.getDate() + 2);
-			} else if (props.rt === '5 Minutes') {
-				nextClaimDate.setMinutes(nextClaimDate.getMinutes() + 5);
-			} else if (props.rt === '30 Minutes') {
-				nextClaimDate.setMinutes(nextClaimDate.getMinutes() + 30);
-			} else if (props.rt === '10 Minutes') {
-				nextClaimDate.setMinutes(nextClaimDate.getMinutes() + 10);
+			var split = props.rt.split(' ');
+			var val = parseInt(split[0]);
+
+			if (
+				split[1].toLowerCase() === 'hours' ||
+				split[1].toLowerCase() === 'hour'
+			) {
+				nextClaimDate.setHours(nextClaimDate.getHours() + val);
+			} else if (
+				split[1].toLowerCase() === 'day' ||
+				split[1].toLowerCase() === 'days'
+			) {
+				nextClaimDate.setDate(nextClaimDate.getDate() + val);
+			} else if (
+				split[1].toLowerCase() === 'minutes' ||
+				split[1].toLowerCase() === 'minute'
+			) {
+				nextClaimDate.setMinutes(nextClaimDate.getMinutes() + val);
 			} else if (props.rt === '00:00 UTC') {
 				nextClaimDate = new Date(
 					Date.UTC(
@@ -203,8 +209,11 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 						0
 					)
 				);
-			} else if (props.rt === '1 Week') {
-				nextClaimDate.setDate(nextClaimDate.getDate() + 7);
+			} else if (
+				split[1].toLowerCase() === 'week' ||
+				split[1].toLowerCase() === 'weeks'
+			) {
+				nextClaimDate.setDate(nextClaimDate.getDate() + 7 * val);
 			}
 
 			const diff = nextClaimDate.getTime() - currentTime;
