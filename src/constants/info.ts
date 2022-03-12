@@ -241,7 +241,7 @@ export const OtherFaucets = [
     limit: -1,
   },
   {
-    name: "Ban Club",
+    name: "Banano Club",
     link: "https://www.bananofaucet.club/",
     type: "Banano",
     ads: false,
@@ -279,7 +279,8 @@ export const OtherFaucets = [
     health: 100,
     captcha: true,
     limit: -1,
-  }, {
+  },
+  {
     name: "NanoRobot",
     link: "https://t.me/NanoFaucetRobot",
     type: "Nano",
@@ -288,6 +289,16 @@ export const OtherFaucets = [
     health: 100,
     captcha: false,
     limit: 330,
+  },
+  {
+    name: "Faucet Queen",
+    link: "https://faucetqueen.repl.co/",
+    type: "Nano",
+    ads: false,
+    rt: "1 Day",
+    health: 100,
+    captcha: true,
+    limit: -1,
   }
   // {
   //   name: "Faucet Queen",
