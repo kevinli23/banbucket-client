@@ -38,6 +38,7 @@ interface OtherFaucetBoxProps {
 	rt: string;
 	health: number;
 	captcha: boolean;
+	limit: number;
 	notificationsEnabled: boolean;
 }
 
@@ -295,6 +296,11 @@ const OtherFaucetBox = (props: OtherFaucetBoxProps) => {
 					{props.captcha && (
 						<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="red">
 							Captcha
+						</Badge>
+					)}
+					{props.limit > -1 && (
+						<Badge borderRadius="full" px="2" m="1" ml="0" colorScheme="twitter">
+							{props.limit}/day
 						</Badge>
 					)}
 				</Box>

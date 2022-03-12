@@ -1,7 +1,7 @@
 # Frontend Client for BanBucket
 
 [![Website banbucket.ninja](https://img.shields.io/website-up-down-green-red/https/banbucket.ninja.svg)](https://www.banbucket.ninja/)
-[![GitHub latest commit](https://badgen.net/github/last-commit/kevinli23/banbucket-client)](https://GitHub.com/kevinli23/banbucket-client/commit/)
+[![Latest commit](https://badgen.net/github/last-commit/kevinli23/banbucket-client/main)](https://GitHub.com/kevinli23/banbucket-client/commit/)
 [![Apache 2.0 license](https://img.shields.io/badge/License-Apache%202.0-red.svg)](http://www.apache.org/licenses/)
 
 ## What is BanBucket?

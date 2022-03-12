@@ -48,6 +48,7 @@ export const OtherFaucets = [
     rt: "15 Hours",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Only Bans",
@@ -57,6 +58,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 80,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Prussia",
@@ -66,6 +68,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 80,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Get Banano",
@@ -75,6 +78,7 @@ export const OtherFaucets = [
     rt: "00:00 UTC",
     health: 70,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Monkey Talks",
@@ -84,6 +88,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 80,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Toga Tech",
@@ -93,6 +98,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Algo Drops",
@@ -102,6 +108,7 @@ export const OtherFaucets = [
     rt: "2 Days",
     health: 100,
     captcha: true,
+    limit: 500,
   },
   {
     name: "Algo For Me",
@@ -111,6 +118,7 @@ export const OtherFaucets = [
     rt: "00:00 UTC",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "The Algo",
@@ -120,6 +128,7 @@ export const OtherFaucets = [
     rt: "1 Week",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Banano Drip",
@@ -129,6 +138,7 @@ export const OtherFaucets = [
     rt: "00:00 UTC",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Free Nyano",
@@ -138,6 +148,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: false,
+    limit: -1,
   },
   {
     name: "Try Nano",
@@ -147,6 +158,7 @@ export const OtherFaucets = [
     rt: "10 Minutes",
     health: 100,
     captcha: false,
+    limit: -1,
   },
   {
     name: "K3I",
@@ -156,6 +168,7 @@ export const OtherFaucets = [
     rt: "30 Minutes",
     health: 100,
     captcha: false,
+    limit: -1,
   },
   {
     name: "K3I",
@@ -165,6 +178,7 @@ export const OtherFaucets = [
     rt: "30 Minutes",
     health: 100,
     captcha: false,
+    limit: -1,
   },
   {
     name: "Bonobo",
@@ -174,6 +188,7 @@ export const OtherFaucets = [
     rt: "1 Week",
     health: 100,
     captcha: false,
+    limit: -1,
   },
   {
     name: "Baucarp",
@@ -183,6 +198,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: false,
+    limit: -1,
   },
   {
     name: "Bonobo(N)",
@@ -192,6 +208,7 @@ export const OtherFaucets = [
     rt: "1 Week",
     health: 100,
     captcha: false,
+    limit: -1,
   },
   {
     name: "MiranDaniel",
@@ -201,6 +218,7 @@ export const OtherFaucets = [
     rt: "1 Week",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "BananoTime(N)",
@@ -210,6 +228,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "BananoTime",
@@ -219,6 +238,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Ban Club",
@@ -228,6 +248,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Gorilla Nation",
@@ -237,6 +258,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "Prussia (M)",
@@ -246,6 +268,7 @@ export const OtherFaucets = [
     rt: "1 Day",
     health: 100,
     captcha: true,
+    limit: -1,
   },
   {
     name: "BananoPlanet",
@@ -255,6 +278,16 @@ export const OtherFaucets = [
     rt: "2 Hours",
     health: 100,
     captcha: true,
+    limit: -1,
+  }, {
+    name: "NanoRobot",
+    link: "https://t.me/NanoFaucetRobot",
+    type: "Nano",
+    ads: false,
+    rt: "18 Hours",
+    health: 100,
+    captcha: false,
+    limit: 330,
   }
   // {
   //   name: "Faucet Queen",
