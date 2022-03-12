@@ -28,6 +28,12 @@ export const RefFaucets = [
     link: "https://freesolana.top/?r=47342",
     type: "Refferal",
     tags: ["ads", "Solana"]
+  },
+  {
+    name: "Play Nano",
+    link: "https://playnano.online/?ref=banbucket",
+    type: "Refferal",
+    tags: ["Nano", "Games", "Surveys"]
   }
 ]
 
