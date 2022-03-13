@@ -71,6 +71,10 @@ const GetIcon = (type: string): string => {
 		return '/algoicon.png';
 	} else if (type === 'Moon') {
 		return '/moonicon.png';
+	} else if (type === 'Dogecoin') {
+		return '/dogeicon.png';
+	} else if (type === 'ZCash') {
+		return '/zcashicon.png';
 	}
 
 	return '/reficon.png';
@@ -433,41 +437,43 @@ const EarnPage = () => {
 					</AccordionPanel>
 				</AccordionItem>
 
-				{['Banano', 'Nano', 'Solana', 'Algorand', 'Moon'].map((t, i) => (
-					<AccordionItem border="none" id={t}>
-						<h2>
-							<AccordionButton
-								onClick={() => {
-									if (indexSet != null && indexSet.has(i + 1)) {
-										indexSet.delete(i + 1);
-									} else {
-										if (indexSet == null) {
-											indexSet = new Set(defaultIndex);
+				{['Banano', 'Nano', 'Solana', 'Algorand', 'Moon', 'Dogecoin', 'ZCash'].map(
+					(t, i) => (
+						<AccordionItem border="none" id={t}>
+							<h2>
+								<AccordionButton
+									onClick={() => {
+										if (indexSet != null && indexSet.has(i + 1)) {
+											indexSet.delete(i + 1);
+										} else {
+											if (indexSet == null) {
+												indexSet = new Set(defaultIndex);
+											}
+											indexSet.add(i + 1);
 										}
-										indexSet.add(i + 1);
-									}
-									localStorage.setItem(
-										'defaultIndex',
-										JSON.stringify(Array.from(indexSet))
-									);
-								}}
-							>
-								<Image src={GetIcon(t)} mr="2" boxSize="30px" />
-								<Box flex="1" textAlign="left">
-									{t} Faucets
-								</Box>
-								<AccordionIcon />
-							</AccordionButton>
-						</h2>
-						<AccordionPanel pb={4}>
-							<Wrap>
-								{OtherFaucets.filter((x) => x.type === t).map((r) => (
-									<OtherFaucetBox notificationsEnabled {...r} />
-								))}
-							</Wrap>
-						</AccordionPanel>
-					</AccordionItem>
-				))}
+										localStorage.setItem(
+											'defaultIndex',
+											JSON.stringify(Array.from(indexSet))
+										);
+									}}
+								>
+									<Image src={GetIcon(t)} mr="2" boxSize="30px" />
+									<Box flex="1" textAlign="left">
+										{t} Faucets
+									</Box>
+									<AccordionIcon />
+								</AccordionButton>
+							</h2>
+							<AccordionPanel pb={4}>
+								<Wrap>
+									{OtherFaucets.filter((x) => x.type === t).map((r) => (
+										<OtherFaucetBox notificationsEnabled {...r} />
+									))}
+								</Wrap>
+							</AccordionPanel>
+						</AccordionItem>
+					)
+				)}
 			</Accordion>
 		</div>
 	);

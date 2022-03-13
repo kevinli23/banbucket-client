@@ -299,7 +299,27 @@ export const OtherFaucets = [
     health: 100,
     captcha: true,
     limit: -1,
-  }
+  },
+  {
+    name: "Changing.cc",
+    link: "https://fdg.exchanging.cc/en/338983/",
+    type: "Dogecoin",
+    ads: true,
+    rt: "1 Hour",
+    health: 100,
+    captcha: false,
+    limit: -1,
+  },
+  {
+    name: "Global Hive",
+    link: "https://globalhive.io/r/212392",
+    type: "ZCash",
+    ads: false,
+    rt: "1 Day",
+    health: 100,
+    captcha: false,
+    limit: -1,
+  },
   // {
   //   name: "Faucet Queen",
   //   link: "https://faucetqueen.repl.co/",
