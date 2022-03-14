@@ -51,6 +51,16 @@ export const OtherFaucets = [
     limit: -1,
   },
   {
+    name: "Nanswap",
+    link: "https://nanswap.com/get-free-nano?ref=nano_3uyr8g44extoefgszk4khpi73qmakqcq9f65babjs9t9uzupbcfcp9jys1me",
+    type: "Nano",
+    ads: false,
+    rt: "1 Week",
+    health: 100,
+    captcha: false,
+    limit: -1,
+  },
+  {
     name: "Only Bans",
     link: "https://www.only-bans.cc/",
     type: "Banano",
@@ -320,6 +330,7 @@ export const OtherFaucets = [
     captcha: false,
     limit: -1,
   },
+
   // {
   //   name: "Faucet Queen",
   //   link: "https://faucetqueen.repl.co/",
