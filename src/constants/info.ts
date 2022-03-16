@@ -330,7 +330,26 @@ export const OtherFaucets = [
     captcha: false,
     limit: -1,
   },
-
+  {
+    name: "Nano2Go",
+    link: "https://nano2go.herokuapp.com/",
+    type: "Nano",
+    ads: false,
+    rt: "30 Minutes",
+    health: 100,
+    captcha: false,
+    limit: -1,
+  },
+  {
+    name: "Banano2Go",
+    link: "https://nano2go.herokuapp.com/",
+    type: "Banano",
+    ads: false,
+    rt: "30 Minutes",
+    health: 100,
+    captcha: false,
+    limit: -1,
+  }
   // {
   //   name: "Faucet Queen",
   //   link: "https://faucetqueen.repl.co/",
