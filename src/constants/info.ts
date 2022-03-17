@@ -34,7 +34,13 @@ export const RefFaucets = [
     link: "https://playnano.online/?ref=banbucket",
     type: "Refferal",
     tags: ["Nano", "Games", "Surveys"]
-  }
+  },
+  {
+    name: "Bonobo.cc",
+    link: "https://bonobo.cc/faucet",
+    type: "Refferal",
+    tags: ["Nano", "Banano", "Exchange"]
+  },
 ]
 
 export const OtherFaucetCryptoTypes = ["Banano", "Nano", "Algorand", "Solana"]
@@ -350,13 +356,4 @@ export const OtherFaucets = [
     captcha: false,
     limit: -1,
   }
-  // {
-  //   name: "Faucet Queen",
-  //   link: "https://faucetqueen.repl.co/",
-  //   type: "Nano",
-  //   ads: true,
-  //   rt: "1 Day",
-  //   health: 100,
-  //   captcha: true,
-  // },
 ]
