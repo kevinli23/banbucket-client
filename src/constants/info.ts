@@ -57,7 +57,17 @@ export const OtherFaucets = [
     limit: -1,
   },
   {
-    name: "Nanswap",
+    name: "NanSwap",
+    link: "https://nanswap.com/get-free-banano?ref=ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu",
+    type: "Banano",
+    ads: false,
+    rt: "1 Week",
+    health: 100,
+    captcha: false,
+    limit: -1,
+  },
+  {
+    name: "Nanswap (N)",
     link: "https://nanswap.com/get-free-nano?ref=nano_3uyr8g44extoefgszk4khpi73qmakqcq9f65babjs9t9uzupbcfcp9jys1me",
     type: "Nano",
     ads: false,
