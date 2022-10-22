@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.banbucket.ninja",
+  "homepage": "https://kevinli23.github.io/banbucket-client/",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.16",
     "@chakra-ui/react": "^1.7.1",
