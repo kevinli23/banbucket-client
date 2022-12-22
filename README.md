@@ -5,7 +5,6 @@
 
 <!-- [![Total Claims](https://badgen.net/https/banbucket-infoservice.vercel.app/api/totalclaims)](https://www.banbucket.ninja/#/stats)
 [![Unique Claims](https://badgen.net/https/banbucket-infoservice.vercel.app/api/uniqueclaims)](https://www.banbucket.ninja/#/stats) -->
-[![Latest commit](https://badgen.net/github/last-commit/kevinli23/banbucket-client/main)](https://GitHub.com/kevinli23/banbucket-client/commit/)
 
 ## What is BanBucket?
 
