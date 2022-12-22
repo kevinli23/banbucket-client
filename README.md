@@ -1,6 +1,8 @@
 # Frontend Client for BanBucket
 
 [![Website banbucket.ninja](https://img.shields.io/website-up-down-green-red/https/kevinli23.github.io/banbucket-client.svg)](https://kevinli23.github.io/banbucket-client/)
+[![Latest commit](https://badgen.net/github/last-commit/kevinli23/banbucket-client/main)](https://GitHub.com/kevinli23/banbucket-client/commit/)
+
 <!-- [![Total Claims](https://badgen.net/https/banbucket-infoservice.vercel.app/api/totalclaims)](https://www.banbucket.ninja/#/stats)
 [![Unique Claims](https://badgen.net/https/banbucket-infoservice.vercel.app/api/uniqueclaims)](https://www.banbucket.ninja/#/stats) -->
 [![Latest commit](https://badgen.net/github/last-commit/kevinli23/banbucket-client/main)](https://GitHub.com/kevinli23/banbucket-client/commit/)
@@ -18,6 +20,7 @@ The faucet is currently inactive until further notice.
 To see for yourself check out [creeper](https://creeper.banano.cc/account/ban_1j3rqseffoin7x5z5y1ehaqe1n7todza41kdf4oyga8phps3ea31u39ruchu)
 
 Total BAN Sent: 2,437.91 BAN
+
 Number of Transactions Sent: 64,754
 
 ## What are Nano and Banano?
